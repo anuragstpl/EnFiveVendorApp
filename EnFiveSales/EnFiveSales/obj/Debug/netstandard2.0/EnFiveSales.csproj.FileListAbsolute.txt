@@ -1,0 +1,13 @@
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\EnFiveSales.deps.json
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\EnFiveSales.dll
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.AssemblyInfoInputs.cache
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.AssemblyInfo.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\ref\EnFiveSales.dll
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\EnFiveSales.pdb
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.dll
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\ref\EnFiveSales.dll
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.pdb
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.csprojAssemblyReference.cache
