@@ -1,10 +1,3 @@
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\optimized\
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.csprojAssemblyReference.cache
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\EnFiveSales.iOS.exe
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\EnFiveSales.iOS.pdb
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
@@ -15,8 +8,6 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneS
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.pdb
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.dll
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.pdb
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.dll
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.pdb
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\ar\Xamarin.Forms.Platform.iOS.resources.dll
@@ -54,7 +45,17 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneS
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\EnFiveSales.dll
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.dll
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\EnFiveSales.pdb
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.pdb
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\optimized\
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.csprojAssemblyReference.cache
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.csproj.CoreCompileInputs.cache
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.csproj.CopyComplete
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.exe

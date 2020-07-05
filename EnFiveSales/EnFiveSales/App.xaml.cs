@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnFiveSales.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace EnFiveSales
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Register();
         }
 
         protected override void OnStart()
