@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "I1uk+CdFKnfEuBlQLMl7WwndETaalfWQ5Y3lmIrYJNwzhkAA/mNQQUs8tGCUnCn6+pDJY2IGA64Q79ZWbBpzWg==",
+  "dgSpecHash": "ba3E5dHi2ArJjrHpn/KTHFFEMgt/3J2n+pJedrR5CxWGasm7k8Bt3u2h1GjLHKhIHKYbxmMHqny0ponauLaD8A==",
   "success": true,
   "projectFilePath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AnuragPC\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\xam.plugins.settings\\4.1.0-beta\\xam.plugins.settings.4.1.0-beta.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",

@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EnFiveSales.View.Styles.xaml", "View/Styles.xaml", typeof(global::EnFiveSales.View.Styles))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("EnFiveSales.View.Styles.xaml", "View/Styles.xaml", typeof(global::EnFiveSales.View.Store.Styles))]
 
-namespace EnFiveSales.View {
+namespace EnFiveSales.View.Store {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\Styles.xaml")]

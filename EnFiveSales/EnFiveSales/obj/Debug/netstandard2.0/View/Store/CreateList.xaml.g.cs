@@ -14,7 +14,7 @@ namespace EnFiveSales.View.Store {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("View\\Store\\CreateList.xaml")]
-    public partial class CreateList : global::Xamarin.Forms.ContentPage {
+    public partial class CreateList : global::Rg.Plugins.Popup.Pages.PopupPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

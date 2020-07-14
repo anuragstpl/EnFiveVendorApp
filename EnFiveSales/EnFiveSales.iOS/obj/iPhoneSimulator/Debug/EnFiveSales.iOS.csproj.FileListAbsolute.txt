@@ -60,3 +60,5 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneS
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.csproj.CopyComplete
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.exe
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\obj\iPhoneSimulator\Debug\EnFiveSales.iOS.pdb
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.dll
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.pdb

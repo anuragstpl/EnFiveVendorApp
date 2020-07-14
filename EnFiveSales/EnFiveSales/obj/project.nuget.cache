@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "bzzryrisw2lJJfmW7sLe07e+sUTIi+mvVZGc5xSOFPpJuvsvSkTXJ0rtvfiubZmqsPmGhgWKdGgbp8Pkh/Bm+g==",
+  "dgSpecHash": "MQkMGx0Zseo3UF23S7ORJ2suh0+TNyHfb/PMIGiW6FcID5Jbc31aNCvMemlTtAyQr0JZFDYDpNScdsKA1+p/iA==",
   "success": true,
   "projectFilePath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AnuragPC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\AnuragPC\\.nuget\\packages\\xam.plugins.settings\\4.1.0-beta\\xam.plugins.settings.4.1.0-beta.nupkg.sha512",

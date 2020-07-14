@@ -1,4 +1,5 @@
 ﻿using EnFiveSales.View;
+using EnFiveSales.View.Store;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace EnFiveSales
         {
             InitializeComponent();
 
-            MainPage = new Register();
+            MainPage = new ListManagement();
         }
 
         protected override void OnStart()

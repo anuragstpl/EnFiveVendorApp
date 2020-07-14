@@ -1,15 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
              x:Class="EnFiveSales.View.Store.CreateList">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="10" Padding="0" BackgroundColor="{DynamicResource Gray-200}">
+            <StackLayout Padding="10">
+
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Entry Text="{Binding Name}"></Entry>
+                            <gradientButton:GradientButton 
+                                StartColor="{DynamicResource PrimaryColor}"
+                                EndColor="{DynamicResource PrimaryGradient}"
+                                GradientOrientation="Horizontal"
+                                Style="{StaticResource SfButtonStyle}" Text="Add Reciept" TextColor="Black" Command="{Binding AddRecieptCommand}" />
+
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</pages:PopupPage>
