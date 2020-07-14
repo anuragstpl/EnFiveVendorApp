@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+             mc:Ignorable="d"
+             xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
+             x:Class="EnFiveSales.View.Store.AddProduct">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="10" Padding="0" BackgroundColor="{DynamicResource Gray-200}">
+            <StackLayout Padding="10">
+
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Entry Text="{Binding Name}" Placeholder="Enter Product Name"></Entry>
+                            <Entry Text="{Binding Quantity}" Keyboard="Numeric" Placeholder="Enter Product Quantity"></Entry>
+                            <gradientButton:GradientButton 
+                                StartColor="{DynamicResource PrimaryColor}"
+                                EndColor="{DynamicResource PrimaryGradient}"
+                                GradientOrientation="Horizontal"
+                                Style="{StaticResource SfButtonStyle}" Text="Add Product" TextColor="Black" Command="{Binding AddProductCommand}" />
+
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

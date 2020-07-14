@@ -10,7 +10,6 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netst
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Register.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\CreateList.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\Dashboard.xaml.g.cs
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\DraftList.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\MasterPage.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Styles.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.AssemblyInfoInputs.cache
@@ -23,3 +22,5 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netst
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\XamlC.stamp
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\Styles.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.csprojAssemblyReference.cache
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\AddProduct.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\ProductList.xaml.g.cs

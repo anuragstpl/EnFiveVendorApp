@@ -72,8 +72,13 @@ namespace EnFiveSales.ViewModel
         public Command AddRecieptPopUpCommand { get; set; }
 
         public ReceiptViewModel() {
-            
-            
+            //GetStoreReciepts API need to be implemented
+            RecieptDTO recieptDTO = new RecieptDTO();
+            recieptDTO.CreatedOn = DateTime.UtcNow.ToString();
+            recieptDTO.Name = "Test Reciept";
+            recieptDTO.Status = ReceiptStatusEnum.New.ToString();
+            ListReceipt = new ObservableCollection<RecieptDTO>();
+            ListReceipt.Add(recieptDTO);
             this.AddRecieptCommand = new Command(this.AddRecieptClicked);
             this.AddRecieptPopUpCommand = new Command(this.AddRecieptPopUpClicked);
         }
@@ -81,7 +86,8 @@ namespace EnFiveSales.ViewModel
         
         private void AddRecieptClicked(object obj)
         {
-
+            //AddReciept API need to be implemented
+            //GetStoreReciepts API need to be implemented
             PopupNavigation.PopAsync(true);
         }
 
