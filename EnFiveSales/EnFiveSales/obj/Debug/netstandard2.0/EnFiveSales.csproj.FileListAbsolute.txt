@@ -21,6 +21,12 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netst
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.csproj.CoreCompileInputs.cache
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\XamlC.stamp
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\Styles.xaml.g.cs
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.csprojAssemblyReference.cache
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\AddProduct.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\ProductList.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\ConfirmOrderProducts.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\ConfirmOrders.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\QueuedOrderProducts.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\QueuedOrders.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\Quotes.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\VendorList.xaml.g.cs
+E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\QuotedVendors.xaml.g.cs

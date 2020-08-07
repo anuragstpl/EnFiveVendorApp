@@ -12,7 +12,7 @@ namespace EnFiveSales
         {
             InitializeComponent();
 
-            MainPage = new ProductList();
+            MainPage = new VendorList();
         }
 
         protected override void OnStart()
