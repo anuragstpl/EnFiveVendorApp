@@ -11,8 +11,7 @@ namespace EnFiveSales
         public App()
         {
             InitializeComponent();
-
-            MainPage = new QueuedOrders();
+            MainPage = new ConfirmOrderProducts();
         }
 
         protected override void OnStart()
