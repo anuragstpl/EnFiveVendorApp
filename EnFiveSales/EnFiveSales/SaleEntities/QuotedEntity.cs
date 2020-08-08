@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EnFiveSales.SaleEntities
 {
-    public class QuotedEntity : BaseEntity
+    public class QuotedEntity : BaseEntityRequest
     {
         public List<RecieptDTO> reciepts { get; set; }
         public List<UserDTO> users { get; set; }

@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "9dTMAF8w5lYQ5us3FaD/ggp/adJhWQfBJFAK/uBZi/B7gYbzU5aWM8bgVNN1eS9O+muSZHxVdZiT+aD/xZRM3g==",
+  "dgSpecHash": "oaFn317pwR/iYlhg92f5DDSqXvTAVYSA0otonfH+56xste/JQyq+vwuVcJ11W5rLH825ejthfFPZEvUVv+7T2Q==",
   "success": true,
-  "projectFilePath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.iOS\\EnFiveSales.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.iOS\\EnFiveSales.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512",
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\xam.plugins.settings\\4.1.0-beta\\xam.plugins.settings.4.1.0-beta.nupkg.sha512",
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\xamarin.essentials\\1.2.0\\xamarin.essentials.1.2.0.nupkg.sha512",
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512"
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512",
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\xam.plugins.settings\\4.1.0-beta\\xam.plugins.settings.4.1.0-beta.nupkg.sha512",
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\xamarin.essentials\\1.2.0\\xamarin.essentials.1.2.0.nupkg.sha512",
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512"
   ],
   "logs": [
     {

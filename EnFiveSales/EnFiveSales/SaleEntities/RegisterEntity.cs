@@ -2,7 +2,7 @@
 
 namespace EnFiveSales.SaleEntities
 {
-    public class RegisterEntity : BaseEntity
+    public class RegisterEntity : BaseEntityRequest
     {
         public UserDTO UserInfo { get; set; }
     }

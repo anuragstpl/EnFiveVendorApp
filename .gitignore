@@ -1,1 +1,7 @@
 .vs/
+EnFiveSales/EnFiveSales/obj/
+EnFiveSales/EnFiveSales.Android/obj/
+EnFiveSales/EnFiveSales.iOS/obj/
+EnFiveSales/EnFiveSales/bin/
+EnFiveSales/EnFiveSales.Android/bin/
+EnFiveSales/EnFiveSales.iOS/bin/
