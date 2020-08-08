@@ -122,7 +122,7 @@ namespace EnFiveSales.ViewModel
             //    SessionHelper.FullName = userLogin.FullName;
             //    Device.BeginInvokeOnMainThread(() =>
             //    {
-            //        ((App)App.Current).UpdateMainPage();
+                    ((App)App.Current).UpdateMainPage();
             //    });
             //    PopupNavigation.PopAsync(true);
             //}

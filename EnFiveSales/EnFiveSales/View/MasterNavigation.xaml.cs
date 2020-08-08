@@ -11,13 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace EnFiveSales.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class MasterNavigation : ContentPage
     {
-        private readonly LoginViewModel _collection = new LoginViewModel();
-        public Login()
+        public MasterNavigation()
         {
             InitializeComponent();
-            this.BindingContext = _collection;
+            BindingContext = new MasterViewModel();
         }
     }
 }

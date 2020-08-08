@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:EnFiveSales.View;assembly=EnFiveSales"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource Gray-200}"
+             x:Class="EnFiveSales.View.MasterNavigation">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+           
+                <Image Source="bg.png" Aspect="AspectFill" />
+                <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="EnFive Sales" TextColor="CornflowerBlue" FontSize="Large" />
+                    <Label Text="Automated Sales App" TextColor="CornflowerBlue" FontSize="Small" />
+                </StackLayout>
+            
+            <StackLayout Margin="5,10,10,0" Grid.Row="1" Spacing="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label  Grid.Column="0" Margin="20,0" Grid.Row="0"
+                                               TextColor="{DynamicResource Gray-600}"
+                                               Text="{StaticResource Home}"
+                                               FontSize="20"
+                                               FontFamily="{StaticResource FontIcons}" />
+                    <local:NavigationItem Text="List Management"  Grid.Row="0" Command="{Binding NavigationCommand}" CommandParameter="1" Grid.Column="1" />
+                    <ContentView HeightRequest="1" Grid.Row="1" BackgroundColor="Gray" Grid.ColumnSpan="2" />
+
+                    <Label  Grid.Column="0" Margin="20,0" Grid.Row="2"
+                                               TextColor="{DynamicResource Gray-600}"
+                                               Text="{StaticResource Document}"
+                                               FontSize="20"
+                                               FontFamily="{StaticResource FontIcons}" />
+                    <local:NavigationItem Text="Queued Orders" Grid.Row="2" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="2" />
+                    <ContentView HeightRequest="1" Grid.Row="3" BackgroundColor="Gray" Grid.ColumnSpan="2" />
+
+                    <Label  Grid.Column="0" Margin="20,0" Grid.Row="4"
+                                               TextColor="{DynamicResource Gray-600}"
+                                               Text="{StaticResource FileExplorer}"
+                                               FontSize="20"
+                                               FontFamily="{StaticResource FontIcons}" />
+                    <local:NavigationItem Text="Confirm Orders" Grid.Row="4" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="3" />
+                    <ContentView HeightRequest="1" Grid.Row="5" BackgroundColor="Gray" Grid.ColumnSpan="2" />
+
+                    <Label  Grid.Column="0" Margin="20,0" Grid.Row="6"
+                                               TextColor="{DynamicResource Gray-600}"
+                                               Text="{StaticResource Settings}"
+                                               FontSize="20"
+                                               FontFamily="{StaticResource FontIcons}" />
+                    <local:NavigationItem Text="Profile Management" Grid.Row="6" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="4" />
+                    <ContentView HeightRequest="1" Grid.Row="7" BackgroundColor="Gray" Grid.ColumnSpan="2" />
+
+                    <Label  Grid.Column="0" Margin="20,0" Grid.Row="8"
+                                               TextColor="{DynamicResource Gray-600}"
+                                               Text="{StaticResource Account}"
+                                               FontSize="20"
+                                               FontFamily="{StaticResource FontIcons}" />
+                    <local:NavigationItem Text="Log Out" Grid.Row="8" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="5" />
+
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

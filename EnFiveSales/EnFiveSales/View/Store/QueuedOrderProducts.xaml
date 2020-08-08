@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-              xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
+             xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
+             NavigationPage.HasNavigationBar="True"
              xmlns:gradientBackground="clr-namespace:EnFiveSales.Controls"
              x:Class="EnFiveSales.View.Store.QueuedOrderProducts">
     <ContentPage.Resources>
