@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "z7DYeaV88WCALMVtHBckUK6K2HfoaHrNRs8gJTeWA4fPKTLeiO7zlNWAmLckIicH/k4ALe9RlkW1P9iFAb6DzA==",
+  "dgSpecHash": "MQkMGx0Zseo3UF23S7ORJ2suh0+TNyHfb/PMIGiW6FcID5Jbc31aNCvMemlTtAyQr0JZFDYDpNScdsKA1+p/iA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
+  "projectFilePath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\xam.plugins.settings\\4.1.0-beta\\xam.plugins.settings.4.1.0-beta.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512"
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\xam.plugins.settings\\4.1.0-beta\\xam.plugins.settings.4.1.0-beta.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512"
   ],
   "logs": []
 }

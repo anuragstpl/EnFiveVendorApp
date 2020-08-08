@@ -19,6 +19,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(RoundedEntry),typeof(RoundedEntryRenderers))]
 namespace EnFiveSales.Droid.Renderers
 {
+
     public class RoundedEntryRenderers : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)

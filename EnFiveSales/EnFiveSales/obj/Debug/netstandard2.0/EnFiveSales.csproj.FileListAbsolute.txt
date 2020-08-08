@@ -30,7 +30,6 @@ E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netst
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\Quotes.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\VendorList.xaml.g.cs
 E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\View\Store\QuotedVendors.xaml.g.cs
-E:\Live Projects\EnFiveSales\EnFiveSales\EnFiveSales\EnFiveSales\obj\Debug\netstandard2.0\EnFiveSales.csprojAssemblyReference.cache
 C:\Users\Anurag Chaurasia\Source\Repos\EnFiveVendorApp\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\EnFiveSales.deps.json
 C:\Users\Anurag Chaurasia\Source\Repos\EnFiveVendorApp\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\EnFiveSales.dll
 C:\Users\Anurag Chaurasia\Source\Repos\EnFiveVendorApp\EnFiveSales\EnFiveSales\bin\Debug\netstandard2.0\ref\EnFiveSales.dll

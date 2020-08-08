@@ -362,7 +362,7 @@
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
-      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "sha512": "nATsBTD2CKr4AYN6eRszhX4sptImWmBJwB/U6XKCWWfnCcrTBw8XSCm3QA9gjppkHTr8OkXUY21MR91D3QZXsw==",
       "type": "package",
       "path": "system.numerics.vectors/4.5.0",
       "files": [
@@ -831,23 +831,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\AnuragPC\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
+      "projectUniqueName": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
       "projectName": "EnFiveSales",
-      "projectPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
-      "packagesPath": "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\obj\\",
+      "projectPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
+      "packagesPath": "C:\\Users\\AnuragPC\\.nuget\\packages\\",
+      "outputPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anurag Chaurasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AnuragPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -856,7 +858,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netstandard2.0": {
