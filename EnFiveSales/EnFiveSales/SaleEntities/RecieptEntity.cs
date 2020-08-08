@@ -2,7 +2,7 @@
 
 namespace EnFiveSales.SaleEntities
 {
-    public class RecieptEntity : BaseEntity
+    public class RecieptEntity : BaseEntityRequest
     {
         public RecieptDTO recieptDTO { get; set; }
     }

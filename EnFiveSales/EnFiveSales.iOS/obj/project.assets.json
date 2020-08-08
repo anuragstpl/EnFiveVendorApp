@@ -945,7 +945,7 @@
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
-      "sha512": "nATsBTD2CKr4AYN6eRszhX4sptImWmBJwB/U6XKCWWfnCcrTBw8XSCm3QA9gjppkHTr8OkXUY21MR91D3QZXsw==",
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "type": "package",
       "path": "system.numerics.vectors/4.5.0",
       "files": [
@@ -1040,7 +1040,7 @@
       ]
     },
     "Xamarin.Essentials/1.2.0": {
-      "sha512": "TRLw7BaklyxhjhSn3uCURS8szBVokQTsLEIHBouho7PuDvy0CDlhnr/ZhiZny7GXw6xX33zcD1AXZz2DvqBN9A==",
+      "sha512": "o3i5uAchUpAvAlJX0onYFFiDo6jpKl9vgvrdDtXEuEfum0UDrSx8oGGBUjlFyUoRpvWVumXwo0VS3AbzuwEofg==",
       "type": "package",
       "path": "xamarin.essentials/1.2.0",
       "files": [
@@ -1411,24 +1411,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AnuragPC\\.nuget\\packages\\": {},
+    "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.iOS\\EnFiveSales.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.iOS\\EnFiveSales.iOS.csproj",
       "projectName": "EnFiveSales.iOS",
-      "projectPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.iOS\\EnFiveSales.iOS.csproj",
-      "packagesPath": "C:\\Users\\AnuragPC\\.nuget\\packages\\",
-      "outputPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.iOS\\obj\\",
+      "projectPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.iOS\\EnFiveSales.iOS.csproj",
+      "packagesPath": "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\AnuragPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anurag Chaurasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1437,13 +1437,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj": {
-              "projectPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj"
+            "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj": {
+              "projectPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj"
             }
           }
         }

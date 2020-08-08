@@ -11,10 +11,8 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using CoreGraphics;
 using EnFiveSales.Controls;
 using EnFiveSales.Droid.Renderers;
-using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 

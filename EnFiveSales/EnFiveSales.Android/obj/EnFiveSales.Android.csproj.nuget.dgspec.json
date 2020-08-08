@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj": {}
+    "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj": {}
   },
   "projects": {
-    "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj": {
+    "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj",
         "projectName": "EnFiveSales.Android",
-        "projectPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj",
-        "packagesPath": "C:\\Users\\AnuragPC\\.nuget\\packages\\",
-        "outputPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.Android\\obj\\",
+        "projectPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.Android\\EnFiveSales.Android.csproj",
+        "packagesPath": "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\AnuragPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anurag Chaurasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,13 +27,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj": {
-                "projectPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj"
+              "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj": {
+                "projectPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj"
               }
             }
           }
@@ -62,21 +62,20 @@
         }
       }
     },
-    "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj": {
+    "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
+        "projectUniqueName": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
         "projectName": "EnFiveSales",
-        "projectPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
-        "packagesPath": "C:\\Users\\AnuragPC\\.nuget\\packages\\",
-        "outputPath": "E:\\Live Projects\\EnFiveSales\\EnFiveSales\\EnFiveSales\\EnFiveSales\\obj\\",
+        "projectPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\EnFiveSales.csproj",
+        "packagesPath": "C:\\Users\\Anurag Chaurasia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anurag Chaurasia\\Source\\Repos\\EnFiveVendorApp\\EnFiveSales\\EnFiveSales\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\AnuragPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anurag Chaurasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -85,7 +84,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {

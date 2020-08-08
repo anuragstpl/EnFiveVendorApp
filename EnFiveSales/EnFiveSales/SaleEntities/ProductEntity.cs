@@ -2,7 +2,7 @@
 
 namespace EnFiveSales.SaleEntities
 {
-    public class ProductEntity : BaseEntity
+    public class ProductEntity : BaseEntityRequest
     {
         public ProductDTO productInfo { get; set; }
     }

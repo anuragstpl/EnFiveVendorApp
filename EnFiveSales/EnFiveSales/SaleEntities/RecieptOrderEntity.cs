@@ -1,6 +1,6 @@
 namespace EnFiveSales.SaleEntities
 {
-    public class RecieptOrderEntity : BaseEntity
+    public class RecieptOrderEntity : BaseEntityRequest
     {
         public int RecieptOrderID { get; set; }
         public int RecieptID { get; set; }
