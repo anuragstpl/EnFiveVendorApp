@@ -23,7 +23,7 @@
                 <Label  Grid.Column="0" Margin="0,20" 
                                                TextColor="Blue"
                                                HorizontalTextAlignment="Center"
-                                               Text="Available Vendors"
+                                               Text="Vendor's Quotes"
                                                FontSize="25"
                                                FontFamily="{StaticResource FontAwesomeSolid}" >
 
@@ -90,18 +90,18 @@
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
-
-                                            <!-- Document Size -->
-                                            <Label Grid.Row="2" 
-                                               Grid.Column="1"
-                                                  
-                                               Margin="0,0,15,0"
+                                            <Frame CornerRadius="15" Grid.Row="2" Margin="6,8,6,10" HasShadow="False" Padding="0" Grid.Column="1">
+                                                <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-200}">
+                                                    <Label
+                                               Margin="15,0,15,0"
                                                    Padding="5"
-                                               Text="{Binding Address}"
+                                               Text="Total Price : INR 500.00"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
+                                                </StackLayout>
+                                            </Frame>
                                         </Grid>
                                     </Frame>
                                 </StackLayout>

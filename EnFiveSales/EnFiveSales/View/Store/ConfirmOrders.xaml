@@ -13,75 +13,69 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid RowSpacing="0" ColumnSpacing="0" VerticalOptions="Fill" HorizontalOptions="StartAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" Spacing="0">
-                <Label  Grid.Column="0" Margin="0,20" 
-                                               TextColor="Blue"
-                                               HorizontalTextAlignment="Center"
-                                               Text="{Binding ReceiptName}"
-                                               FontSize="25"
-                                               FontFamily="{StaticResource FontAwesomeSolid}" >
-
-                </Label>
-            </StackLayout>
-            <StackLayout Grid.Row="1" Spacing="0">
-                <Label  Grid.Column="0" Margin="17,8" 
+                <Label  Grid.Column="0" Margin="20,15"  
                                                TextColor="DeepPink"
-                                                HorizontalTextAlignment="End"
-                                               Text="&#xf0b0;"
+                                                HorizontalTextAlignment="Center"
+                                               Text="Confirmed Orders"
                                                FontSize="25"
                                                FontFamily="{StaticResource FontAwesomeSolid}" >
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding AddProductPopUpCommand}" NumberOfTapsRequired="1" CommandParameter="{Binding .}" />
+                        <TapGestureRecognizer Command="{Binding AddRecieptPopUpCommand}" NumberOfTapsRequired="1" CommandParameter="{Binding .}" />
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
-            <StackLayout Grid.Row="2" Spacing="0">
-
-                <ListView x:Name="productInfo" HasUnevenRows="True"
+            <StackLayout Grid.Row="1" Margin="20,8,20,0" >
+                <ScrollView VerticalOptions="FillAndExpand"
+            Orientation="Vertical">
+                    <ListView x:Name="ListReceipt" 
                                                   SelectionMode="Single"
-                                                  VerticalOptions="FillAndExpand"
-                                                  ItemsSource="{Binding ProductInfo}">
+                                            HasUnevenRows="True"      
+                                                  ItemsSource="{Binding ListReceipt}">
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Spacing="0">
-                                    <Frame  IsClippedToBounds="True"  
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Spacing="0">
+                                        <Frame 
+                                            
                                     HasShadow="True"  
                                     Padding="0"  
+                                                
                                     BackgroundColor="White">
-                                        <Frame.Margin>
-                                            <OnPlatform x:TypeArguments="Thickness"  
-                                             Android="10"   
-                                             iOS="10"/>
-                                        </Frame.Margin>
-                                        <Grid RowSpacing="0" ColumnSpacing="0">
+                                            <Frame.Margin>
+                                                <OnPlatform x:TypeArguments="Thickness"  
+                                             Android="0"   
+                                             iOS="0"/>
+                                            </Frame.Margin>
+                                            <Grid RowSpacing="0" ColumnSpacing="0">
 
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                                <RowDefinition Height="Auto" />
-                                            </Grid.RowDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
 
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
 
-                                            <Label  Grid.Column="0" Margin="17,8" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="3"
+                                                <Label  Grid.Column="0" Margin="17,8" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="4"
                                                Text="&#xf15b;"
                                                FontSize="75"
-                                               TextColor="Teal"
+                                                    TextColor="Teal"
                                                FontFamily="{StaticResource FontAwesomeSolid}" />
 
-                                            <!-- Document Name -->
-                                            <Label Grid.Column="1" Grid.ColumnSpan="2" FontFamily="{StaticResource Montserrat-SemiBold}"
+                                                <!-- Document Name -->
+                                                <Label Grid.Column="1" Grid.ColumnSpan="5" FontFamily="{StaticResource Montserrat-SemiBold}"
                                                Grid.Row="0"
                                                Margin="0,13,0,0"
                                                Text="{Binding Name}"
@@ -90,49 +84,65 @@
                                               
                                                 />
 
-                                            <!-- Time -->
-                                            <Label Grid.Row="1"
+                                                <!-- Time -->
+                                                <Label Grid.Row="1"
                                                Grid.Column="1"
                                                Margin="0,0,0,0"
                                                    Padding="5"
-                                               Text="{Binding Quantity}"
+                                               Text="Confirmed"
                                                TextColor="{DynamicResource Gray-700}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
 
-                                            <!-- Document Size -->
-                                            <Label Grid.Row="1" 
-                                               Grid.Column="2"
-                                                  
+                                                <!-- Document Size -->
+                                                <Label Grid.Row="2" Grid.ColumnSpan="5"
+                                               Grid.Column="1"
                                                Margin="0,0,15,0"
                                                    Padding="5"
-                                               Text="{Binding AddedOn}"
+                                               Text="{Binding CreatedOn}"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
+                                                <Frame CornerRadius="15" Grid.Row="3" Margin="6,8,6,10" HasShadow="False" Padding="0" Grid.Column="1">
+                                                    <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-200}">
 
-
-
-                                            <Label Grid.Row="2"
-                                               Grid.Column="2"
-                                               Margin="0,0,0,10"
+                                                        <Label 
+                                               Margin="15,0,15,0"
                                                    Padding="5"
-                                               Text="&#xf044;"
+                                               Text="Total Price : INR500"
                                                    HorizontalOptions="End"
-                                               TextColor="{DynamicResource LightGreen}"
-                                               FontSize="20"
+                                               TextColor="{DynamicResource Secondary}"
+                                               FontSize="14"
                                                FontFamily="{StaticResource FontAwesomeSolid}">
 
-                                            </Label>
-                                        </Grid>
-                                    </Frame>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+
+
+                                                </Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                                <Frame CornerRadius="15" Grid.Row="4" Margin="6,8,6,10" HasShadow="False" Padding="0" Grid.Column="0" Grid.ColumnSpan="5">
+                                                    <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-200}">
+                                                        <Label
+                                                       HorizontalTextAlignment="Center"
+                                               Margin="0,0,15,0"
+                                                   Padding="5"
+                                               Text="Order Note : Please deliver order between 9AM to 10PM on week days only."
+                                               TextColor="{DynamicResource Secondary}"
+                                               FontSize="14"
+                                               FontFamily="{StaticResource Montserrat-Medium}"
+                                                />
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
             </StackLayout>
 
         </Grid>

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
              x:Class="EnFiveSales.View.Store.Quotes">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -18,30 +19,20 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" Spacing="0">
                 <Label  Grid.Column="0" Margin="0,20" 
                                                TextColor="Blue"
                                                HorizontalTextAlignment="Center"
-                                               Text="{Binding ReceiptName}"
+                                               Text="Quoted Product Prices"
                                                FontSize="25"
                                                FontFamily="{StaticResource FontAwesomeSolid}" >
 
                 </Label>
             </StackLayout>
+
             <StackLayout Grid.Row="1" Spacing="0">
-                <Label  Grid.Column="0" Margin="17,8" 
-                                               TextColor="DeepPink"
-                                                HorizontalTextAlignment="End"
-                                               Text="&#xf0b0;"
-                                               FontSize="25"
-                                               FontFamily="{StaticResource FontAwesomeSolid}" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding AddProductPopUpCommand}" NumberOfTapsRequired="1" CommandParameter="{Binding .}" />
-                    </Label.GestureRecognizers>
-                </Label>
-            </StackLayout>
-            <StackLayout Grid.Row="2" Spacing="0">
 
                 <ListView x:Name="productInfo" HasUnevenRows="True"
                                                   SelectionMode="Single"
@@ -100,32 +91,20 @@
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
+                                            <Frame CornerRadius="15" Grid.Row="2" Margin="6,8,6,10" HasShadow="False" Padding="0" Grid.Column="1">
+                                                <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-200}">
 
-                                            <!-- Document Size -->
-                                            <Label Grid.Row="1" 
-                                               Grid.Column="2"
+                                                    <Label 
                                                   
-                                               Margin="0,0,15,0"
+                                               Margin="15,0,15,0"
                                                    Padding="5"
-                                               Text="{Binding AddedOn}"
+                                               Text="INR 250.00"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
-
-
-
-                                            <Label Grid.Row="2"
-                                               Grid.Column="2"
-                                               Margin="0,0,0,10"
-                                                   Padding="5"
-                                               Text="&#xf044;"
-                                                   HorizontalOptions="End"
-                                               TextColor="{DynamicResource LightGreen}"
-                                               FontSize="20"
-                                               FontFamily="{StaticResource FontAwesomeSolid}">
-
-                                            </Label>
+                                                </StackLayout>
+                                            </Frame>
                                         </Grid>
                                     </Frame>
                                 </StackLayout>
@@ -135,6 +114,25 @@
                 </ListView>
             </StackLayout>
 
+            <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="20"
+                  Margin="20,0,20,30"
+                Grid.Row="2"
+                    VerticalOptions="CenterAndExpand">
+                <Editor Placeholder="Enter Order Instructions" Keyboard="Chat" HeightRequest="100" BackgroundColor="White" >
+                    
+                </Editor>
+
+                <gradientButton:GradientButton
+                        Command="{Binding LoginCommand}"
+                        CornerRadius="20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        Style="{StaticResource SfButtonStyle}"
+                        StartColor="{DynamicResource HyperLink}"
+                        EndColor="{DynamicResource HyperLink}"
+                        Text="Confirm Quote" />
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -21,9 +21,10 @@
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" Spacing="0">
                 <Label  Grid.Column="0" Margin="20,15"  
+                        HorizontalTextAlignment="Center"
                                                TextColor="DeepPink"
-                                                HorizontalTextAlignment="End"
-                                               Text="&#xf0b0;"
+                                               
+                                               Text="Reciept's to Quote"
                                                FontSize="25"
                                                FontFamily="{StaticResource FontAwesomeSolid}" >
                     <Label.GestureRecognizers>
@@ -67,17 +68,17 @@
                                                     <ColumnDefinition Width="Auto" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <Label  Grid.Column="0" Margin="17,8" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="3"
+                                                <Label  Grid.Column="0" Margin="17,8" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="4"
                                                Text="&#xf15b;"
                                                FontSize="75"
                                                     TextColor="Teal"
                                                FontFamily="{StaticResource FontAwesomeSolid}" />
 
                                                 <!-- Document Name -->
-                                                <Label Grid.Column="1" Grid.ColumnSpan="5" FontFamily="{StaticResource Montserrat-SemiBold}"
+                                                <Label Grid.Column="1" Grid.ColumnSpan="2" FontFamily="{StaticResource Montserrat-SemiBold}"
                                                Grid.Row="0"
                                                Margin="0,13,0,0"
-                                               Text="{Binding Name}"
+                                               Text="Ganga Mobile Shop"
                                                TextColor="{DynamicResource Gray-900}"
                                                FontSize="14"
                                               
@@ -88,35 +89,36 @@
                                                Grid.Column="1"
                                                Margin="0,0,0,0"
                                                    Padding="5"
-                                               Text="{Binding Status}"
+                                               Text="Quoted"
                                                TextColor="{DynamicResource Gray-700}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
 
                                                 <!-- Document Size -->
-                                                <Label Grid.Row="1" Grid.ColumnSpan="5"
-                                               Grid.Column="2"
-                                               Margin="0,0,15,0"
-                                                   Padding="5"
+                                                <Label Grid.Row="2" 
+                                               Grid.Column="1"
+                                               Margin="0,0,15,5"
+                                                
                                                Text="{Binding CreatedOn}"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
 
-                                                <Label Grid.Row="2"
-                                               Grid.Column="5"
-                                               Margin="0,0,0,10"
-                                                   Padding="5"
-                                               Text="&#xf044;"
-                                                   HorizontalOptions="End"
-                                               TextColor="{DynamicResource LightGreen}"
-                                               FontSize="20"
-                                               FontFamily="{StaticResource FontAwesomeSolid}">
 
-                                                </Label>
-
+                                                <Label Grid.Row="3" 
+                                               Grid.Column="1"
+                                                        
+                                               Margin="0,0,15,5"
+                                                  
+                                               Text="Receipt Name"
+                                               TextColor="{DynamicResource Secondary}"
+                                               FontSize="14"
+                                               FontFamily="{StaticResource Montserrat-Medium}"
+                                                />
+                                                
+                                              
                                             </Grid>
                                         </Frame>
                                     </StackLayout>
