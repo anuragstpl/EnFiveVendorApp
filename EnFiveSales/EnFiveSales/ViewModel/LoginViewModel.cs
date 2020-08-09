@@ -1,8 +1,12 @@
 ﻿using EnFiveSales.Helper;
+using EnFiveSales.Model;
+using EnFiveSales.SaleEntities.Request;
+using EnFiveSales.SaleEntities.Response;
 using EnFiveSales.View;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Json;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -10,15 +14,8 @@ using Xamarin.Forms.Internals;
 namespace EnFiveSales.ViewModel
 {
     [Preserve(AllMembers = true)]
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : LoginModel
     {
-        #region Fields
-
-        private string email;
-
-        private string password;
-
-        #endregion
 
         #region Constructor
 
@@ -31,49 +28,6 @@ namespace EnFiveSales.ViewModel
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
-        }
-
-        #endregion
-
-        #region property
-
-        public string Email
-        {
-            get
-            {
-                return this.email;
-            }
-
-            set
-            {
-                if (this.email == value)
-                {
-                    return;
-                }
-                this.email = value;
-                this.NotifyPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the property that is bound with an entry that gets the password from user in the login page.
-        /// </summary>
-        public string Password
-        {
-            get
-            {
-                return this.password;
-            }
-
-            set
-            {
-                if (this.password == value)
-                {
-                    return;
-                }
-                this.password = value;
-                this.NotifyPropertyChanged();
-            }
         }
 
         #endregion
@@ -110,27 +64,21 @@ namespace EnFiveSales.ViewModel
         /// <param name="obj">The Object</param>
         private async void LoginClicked(object obj)
         {
-            //PopupNavigation.PushAsync(new ActivityLoader());
-            //UserLoginRequest userLoginRequest = new UserLoginRequest();
-            //userLoginRequest.PasswordHash = Password;
-            //userLoginRequest.UserNameOREmail = Email;
-            //System.Json.JsonValue userLoginResponse = await ServiceRequestHelper<UserLoginRequest>.POSJSONTreq(ServiceTypes.Login, userLoginRequest);
-            //UserLoginResponse userLogin = JsonConvert.DeserializeObject<UserLoginResponse>(userLoginResponse.ToString());
-            //if (userLogin.IsSuccess)
-            //{
-            //    SessionHelper.AccessToken = userLogin.Token;
-            //    SessionHelper.FullName = userLogin.FullName;
-            //    Device.BeginInvokeOnMainThread(() =>
-            //    {
-                    ((App)App.Current).UpdateMainPage();
-            //    });
-            //    PopupNavigation.PopAsync(true);
-            //}
-            //else
-            //{
-            //    PopupNavigation.PopAsync(true);
-            //    await App.Current.MainPage.DisplayAlert("Incorrect Details", userLogin.Message, "OK");
-            //}
+            LoginModel loginModel = new LoginModel();
+            LoginStoreRequest loginStoreRequest = new LoginStoreRequest();
+            loginStoreRequest.UserNameOrEmail = loginModel.UserNameOREmail;
+            loginStoreRequest.PasswordHash = loginModel.PasswordHash;
+            JsonValue userLoginResponse = await HttpRequestHelper<LoginStoreRequest>.POSTreq(ServiceTypes.Login, loginStoreRequest);
+            LoginStoreResponse loginStoreResponse = JsonConvert.DeserializeObject<LoginStoreResponse>(userLoginResponse.ToString());
+            if (loginStoreResponse.IsSuccess)
+            {
+                ((App)App.Current).UpdateMainPage();
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Error", loginStoreResponse.Message, "Ok");
+            }
+
         }
 
         /// <summary>
