@@ -13,6 +13,7 @@ using Android.Widget;
 using EnFiveSales.DataService;
 using EnFiveSales.Droid.DependencyServices;
 using Android;
+using Android.Graphics.Drawables;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MessageAndroid))]
 namespace EnFiveSales.Droid.DependencyServices
@@ -34,7 +35,8 @@ namespace EnFiveSales.Droid.DependencyServices
             // Instantiate the builder and set notification elements:
             NotificationCompat.Builder builder = new NotificationCompat.Builder(Application.Context, "my_notification_channel")
                 .SetContentTitle("Sample Notification")
-                .SetContentText(message);
+                .SetContentText(message)
+                .SetSmallIcon(Android.Resource.Drawable.PresenceOnline);
 
             // Build the notification:
             Notification notification = builder.Build();
