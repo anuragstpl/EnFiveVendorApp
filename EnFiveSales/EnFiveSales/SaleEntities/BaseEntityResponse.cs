@@ -12,5 +12,6 @@ namespace EnFiveSales.SaleEntities
 
         [JsonProperty("IsSuccess")]
         public bool IsSuccess { get; set; }
+
     }
 }

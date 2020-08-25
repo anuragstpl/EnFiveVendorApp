@@ -13,7 +13,7 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QueuedOrderProducts : ContentPage
     {
-        private readonly ProductViewModel _collection = new ProductViewModel();
+        private readonly QueuedOrderProductsViewModal _collection = new QueuedOrderProductsViewModal();
         public QueuedOrderProducts()
         {
             InitializeComponent();

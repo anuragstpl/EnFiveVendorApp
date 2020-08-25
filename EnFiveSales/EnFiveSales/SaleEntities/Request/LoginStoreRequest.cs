@@ -7,10 +7,12 @@ namespace EnFiveSales.SaleEntities.Request
 {
     public class LoginStoreRequest : BaseEntityRequest
     {
-        [JsonProperty("PasswordHash")]
-        public string PasswordHash { get; set; }
+        //according to api
+        [JsonProperty("PasswordHash")] 
+     //  according to control binding
+        public string Password { get; set; }
 
         [JsonProperty("UserNameOREmail")]
-        public string UserNameOrEmail { get; set; }
+        public string Username { get; set; }
     }
 }

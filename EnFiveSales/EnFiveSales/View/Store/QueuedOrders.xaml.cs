@@ -13,7 +13,7 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QueuedOrders : ContentPage
     {
-        private readonly ReceiptViewModel _collection = new ReceiptViewModel();
+        private readonly QueuedOrdersViewModel _collection = new QueuedOrdersViewModel();
         public QueuedOrders()
         {
             InitializeComponent();

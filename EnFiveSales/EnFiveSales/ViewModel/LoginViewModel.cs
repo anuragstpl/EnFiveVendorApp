@@ -64,14 +64,14 @@ namespace EnFiveSales.ViewModel
         /// <param name="obj">The Object</param>
         private async void LoginClicked(object obj)
         {
-            LoginModel loginModel = new LoginModel();
             LoginStoreRequest loginStoreRequest = new LoginStoreRequest();
-            loginStoreRequest.UserNameOrEmail = loginModel.UserNameOREmail;
-            loginStoreRequest.PasswordHash = loginModel.PasswordHash;
+            loginStoreRequest.Username = Username;
+            loginStoreRequest.Password = Password;
             JsonValue userLoginResponse = await HttpRequestHelper<LoginStoreRequest>.POSTreq(ServiceTypes.Login, loginStoreRequest);
             LoginStoreResponse loginStoreResponse = JsonConvert.DeserializeObject<LoginStoreResponse>(userLoginResponse.ToString());
             if (loginStoreResponse.IsSuccess)
             {
+                SessionHelper.AccessToken = loginStoreResponse.Token;
                 ((App)App.Current).UpdateMainPage();
             }
             else

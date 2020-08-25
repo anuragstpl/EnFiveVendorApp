@@ -37,7 +37,7 @@
                 <ListView x:Name="productInfo" HasUnevenRows="True"
                                                   SelectionMode="Single"
                                                   VerticalOptions="FillAndExpand"
-                                                  ItemsSource="{Binding ProductInfo}">
+                                                  ItemsSource="{Binding ProductData}">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>

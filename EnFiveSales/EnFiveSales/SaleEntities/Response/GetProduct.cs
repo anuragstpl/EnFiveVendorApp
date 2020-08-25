@@ -1,15 +1,17 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace EnFiveSales.DTO
+namespace EnFiveSales.SaleEntities.Response
 {
-    public class ProductDTO
+    public class GetProduct : BaseEntityResponse
     {
         [JsonProperty("AddedOn")]
         public string AddedOn { get; set; }
 
         [JsonProperty("IsAvailable")]
-        public bool? IsAvailable { get; set; }
+        public string  IsAvailable { get; set; }
 
         [JsonProperty("Name")]
         public string Name { get; set; }

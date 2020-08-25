@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\GetRecieptModel.cs" />
+    <Compile Remove="SaleEntities\Response\GetProduct.cs" />
+    <Compile Remove="SaleEntities\Response\GetReciept.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Plugin.FirebasePushNotification" Version="3.3.13-beta" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.3" />

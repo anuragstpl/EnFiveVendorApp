@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Json;
 using System.Net.Http;
+using EnFiveSales.SaleEntities.Request;
 
 namespace EnFiveSales.Helper
 {
@@ -12,10 +13,10 @@ namespace EnFiveSales.Helper
     {
         public static async Task<JsonValue> POSTreq(ServiceTypes services, T saleEntity)
         {
-            Uri requestUri = new Uri(SaleItemGlobal.serviceURL + services);
+            Uri requestUri = new Uri(SaleItemGlobal.serviceURL+ services);
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(saleEntity);
             var objClint = new System.Net.Http.HttpClient();
-            System.Net.Http.HttpResponseMessage respon = objClint.PostAsync(requestUri, new StringContent(json, System.Text.Encoding.UTF8, "application/json")).Result;
+            HttpResponseMessage respon = objClint.PostAsync(requestUri, new StringContent(json, System.Text.Encoding.UTF8, "application/json")).Result;
             string responJsonText = await respon.Content.ReadAsStringAsync();
             return await Task.Run(() => JsonObject.Parse(responJsonText));
         }
@@ -24,9 +25,14 @@ namespace EnFiveSales.Helper
         {
             Uri geturi = new Uri(SaleItemGlobal.serviceURL + services);
             System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
-            System.Net.Http.HttpResponseMessage responseGet = await client.GetAsync(geturi + URLAppender);
+            System.Net.Http.HttpResponseMessage responseGet = await client.GetAsync(geturi +"/"+ URLAppender);
             string response = await responseGet.Content.ReadAsStringAsync();
             return await Task.Run(() => JsonObject.Parse(response));
+        }
+
+        internal static Task<JsonValue> GetRequest(ServiceTypes getReciepts, GetRecieptRequest getRecieptRequest)
+        {
+            throw new NotImplementedException();
         }
     }
 }

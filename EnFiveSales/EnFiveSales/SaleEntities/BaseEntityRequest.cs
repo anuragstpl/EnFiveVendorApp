@@ -8,5 +8,6 @@ namespace EnFiveSales.SaleEntities
     public abstract class BaseEntityRequest
     {
         public string AuthToken { get; set; }
+
     }
 }

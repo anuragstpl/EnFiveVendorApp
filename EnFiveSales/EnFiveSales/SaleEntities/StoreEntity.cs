@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using EnFiveSales.DTO;
+using Newtonsoft.Json;
 
 namespace EnFiveSales.SaleEntities
 {
-    public class StoreEntity : BaseEntityRequest
+    public class StoreEntity : BaseEntityResponse
     {
-        public List<UserDTO> userDetails;
+        [JsonProperty("userDetails")]
+        public List<UserDTO> lstUserDetails { get; set; }
     }
 }
