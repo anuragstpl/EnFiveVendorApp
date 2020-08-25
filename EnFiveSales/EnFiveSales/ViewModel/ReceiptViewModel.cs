@@ -25,27 +25,14 @@ namespace EnFiveSales.ViewModel
     public class ReceiptViewModel : AddRecieptModel
     {
         public ObservableCollection<RecieptDTO> RecieptsData { get; set; }
-        public Command ShowProductCommand { get; set; }
+
         public ReceiptViewModel()
         {
             Task.Run(async () => { await GetReciepts(); }).Wait();
             this.AddRecieptCommand = new Command(this.AddRecieptClicked);
             this.AddRecieptPopUpCommand = new Command(this.AddRecieptPopUpClicked);
-            this.ShowProductCommand = new Command(this.ShowRecieptProductClicked);
-            //this.AddRecieptPopUpCommand = new Command(this.ShowRecieptProductPopUpClicked);
-             //  RecieptsData = new ObservableCollection<GetReciept>();
-            // selecProductfromList spl = new selecProductfromList();
-            //spl.ListViewSelectProductId();
+            this.SelectedRecieptCommand = new Command(this.SelectedRecieptClicked);
         }
-
-        private async void ShowRecieptProductClicked(object obj)
-        {
-            ((App)App.Current).ReciptProductMainPage();
-        }
-        //private void ShowRecieptProductPopUpClicked(object obj)
-        //{
-        //   PopupNavigation.PushAsync(new ListManagement()); 
-        //}
 
         private async Task<GetRecieptResponse> GetReciepts()
         {
@@ -53,7 +40,6 @@ namespace EnFiveSales.ViewModel
             GetRecieptResponse getRecieptResponse = JsonConvert.DeserializeObject<GetRecieptResponse>(GetRecieptResponse.ToString());
             if (getRecieptResponse.IsSuccess)
             {
-                //bind data in listView
                 List<RecieptDTO> lstGetReciepts = getRecieptResponse.LstReciepts.Select(dc => new RecieptDTO()
                 {
                     Name = dc.Name,
@@ -138,36 +124,21 @@ namespace EnFiveSales.ViewModel
 
 
         }
+
+        private async void SelectedRecieptClicked(object obj)
+        {
+            int recieptID = Convert.ToInt32(((RecieptDTO)obj).RecieptID);
+            var mdp = (Application.Current.MainPage as MasterDetailPage);
+            var navPage = mdp.Detail as NavigationPage;
+            if (navPage.Navigation.NavigationStack.Count == 0 ||
+                            navPage.Navigation.NavigationStack.Last().GetType() != typeof(ProductList))
+            {
+                await navPage.PushAsync(new ProductList(recieptID), true);
+            }
+        }
         private void AddRecieptPopUpClicked(object obj)
         {
             PopupNavigation.PushAsync(new CreateList());
-        }
-    }
-
-    public class selecProductfromList
-    {
-        private RecieptDTO selectProductId { get; set; }
-        public RecieptDTO SelectProductId   
-        {
-            get
-            {
-                return selectProductId;
-            }
-            set
-            {
-                if (selectProductId != value)
-                {
-                    selectProductId = value;
-                    ListViewSelectProductId();
-                }
-
-            }
-        }
-
-        public void ListViewSelectProductId()
-        {
-            Page page = new Page();
-            page.DisplayAlert("Selected Product Id", selectProductId.Name, "OK");
         }
     }
 

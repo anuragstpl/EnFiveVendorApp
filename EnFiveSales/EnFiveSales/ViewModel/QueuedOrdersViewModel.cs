@@ -28,9 +28,7 @@ namespace EnFiveSales.ViewModel
 
         private async void ShowRecieptProduct(object obj)
         {
-            //go to QueuedOrderProducts on app.xaml page 
-            // delete  this function after the successfull testing
-            ((App)App.Current).QuedOrderProductMainPage();
+            
         }
         private async Task<GetRecieptResponse> GetReciepts()
         {

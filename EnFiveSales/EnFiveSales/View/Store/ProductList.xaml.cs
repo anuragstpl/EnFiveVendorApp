@@ -13,11 +13,11 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductList : ContentPage
     {
-        private readonly ProductViewModel _collection = new ProductViewModel();
-        public ProductList()
+        public ProductList(int RecieptID)
         {
             InitializeComponent();
-            this.BindingContext = _collection;
+            ProductViewModel _collection = new ProductViewModel(RecieptID);
+            BindingContext = _collection;
         }
     }
 }

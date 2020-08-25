@@ -24,18 +24,18 @@ namespace EnFiveSales.ViewModel
     public class ProductViewModel : BaseViewModel
     {
 
-        private string price { get; set;}
+        private string price { get; set; }
         public string Price
         {
             get { return this.price; }
             set
             {
-                if (this.price  == value)
+                if (this.price == value)
                 {
                     return;
                 }
 
-                this.price  = value;
+                this.price = value;
                 this.NotifyPropertyChanged();
             }
         }
@@ -89,9 +89,9 @@ namespace EnFiveSales.ViewModel
             }
         }
 
-        private string  quantity { get; set; }
+        private string quantity { get; set; }
 
-        public string  Quantity
+        public string Quantity
         {
             get { return this.quantity; }
             set
@@ -125,28 +125,9 @@ namespace EnFiveSales.ViewModel
 
         public ObservableCollection<ProductDTO> ProductData { get; set; }
 
-       // private ObservableCollection<ProductDTO> productInfo { get; set; }
-
-        //public ObservableCollection<ProductDTO> ProductInfo
-        //{
-        //    get { return this.productInfo; }
-        //    set
-        //    {
-        //        if (this.productInfo == value)
-        //        {
-        //            return;
-        //        }
-
-        //        this.productInfo = value;
-        //        this.NotifyPropertyChanged();
-        //    }
-        //}
-        private async Task<AddProductResponce> GetProduct()
+        private async Task<AddProductResponce> GetProduct(int RecieptID)
         {
-            //AddProductRequest addProductRequest = new AddProductRequest();
-           // addProductRequest.AuthToken = SessionHelper.AccessToken;
-           // addProductRequest.RecieptID = recieptId;
-            JsonValue GetProductResponce = await HttpRequestHelper<String>.GetRequest(ServiceTypes.GetProducts, SessionHelper.AccessToken+"/"+"45");
+            JsonValue GetProductResponce = await HttpRequestHelper<String>.GetRequest(ServiceTypes.GetProducts, SessionHelper.AccessToken + "/" + RecieptID.ToString());
             AddProductResponce getProductResponse = JsonConvert.DeserializeObject<AddProductResponce>(GetProductResponce.ToString());
             if (getProductResponse.IsSuccess)
             {
@@ -156,7 +137,7 @@ namespace EnFiveSales.ViewModel
                     IsAvailable = dc.IsAvailable,
                     Name = dc.Name,
                     Price = dc.Price,
-                    ProductID = dc.ProductID ,
+                    ProductID = dc.ProductID,
                     Quantity = dc.Quantity,
                     RecieptID = dc.RecieptID,
                     UpdatedOn = dc.UpdatedOn,
@@ -171,7 +152,7 @@ namespace EnFiveSales.ViewModel
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Error", getProductResponse.Message, "Ok");
+
             }
             return getProductResponse;
         }
@@ -182,21 +163,19 @@ namespace EnFiveSales.ViewModel
 
         public Command AddProductPopUpCommand { get; set; }
 
-        //public ProductViewModel(int receiptID) SendProductToVendorCommand
+        public ProductViewModel(int RecieptID)
+        {
+            Task.Run(async () => { await GetProduct(RecieptID); }).Wait();
+            this.AddProductCommand = new Command(this.AddProductClicked);
+            this.AddProductPopUpCommand = new Command(this.AddProductPopUpClicked);
+        }
 
         public ProductViewModel()
         {
-            Task.Run(async () => { await GetProduct(); }).Wait();
             this.AddProductCommand = new Command(this.AddProductClicked);
             this.AddProductPopUpCommand = new Command(this.AddProductPopUpClicked);
-          //  this.AddProductPopUpCommand = new Command(this.AddProductCommandClicked);
-
         }
 
-        //private async void AddProductCommandClicked(object obj)
-        //{
-        //    ((App)App.Current).QuotedReciptToVendorMainPage();
-        //}
         private async void AddProductClicked(object obj)
         {
             ///GetProducts/{AuthToken}/{RecieptID} API need to be implemented
@@ -217,7 +196,7 @@ namespace EnFiveSales.ViewModel
             if (addProductResponce.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert("success", addProductResponce.Message, "Ok");
-                Task.Run(async () => { await GetProduct(); }).Wait();
+                Task.Run(async () => { await GetProduct(45); }).Wait();
             }
             else
             {

@@ -115,5 +115,7 @@ namespace EnFiveSales.Model
         }
         public Command AddRecieptCommand { get; set; }
         public Command AddRecieptPopUpCommand { get; set; }
+        public Command SelectedRecieptCommand { get; set; }
+
     }
 }

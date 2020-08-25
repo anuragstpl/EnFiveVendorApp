@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
-
+             xmlns:behaviors="clr-namespace:EnFiveSales.Behaviors"   
              mc:Ignorable="d"
              x:Class="EnFiveSales.View.Store.ListManagement"
              NavigationPage.HasNavigationBar="True"
@@ -42,11 +42,11 @@
                                                   SelectionMode="Single"
                                                   HasUnevenRows="True"      
                                                   ItemsSource="{Binding RecieptsData}">
-                        <!-->       SelectedItem="{Binding SelectProductId}">
-                        the above line is created by me.
-                                               <-->
+                        <ListView.Behaviors>
+                            <behaviors:ItemTappedBehavior Command="{Binding SelectedRecieptCommand}" />
+                        </ListView.Behaviors>
 
-                            <ListView.ItemTemplate>
+                        <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <StackLayout Spacing="0">
@@ -133,23 +133,6 @@
                     </ListView>
                 </ScrollView>
             </StackLayout>
-            <!--> this is a button for let product under the reciept no 45 of itc user given to Dabar store<-->
-            <StackLayout
-                    HorizontalOptions="FillAndExpand"
-                    Spacing="20"
-                  Margin="20,0,20,30"
-                Grid.Row="2"
-                    VerticalOptions="CenterAndExpand">
-                <gradientButton:GradientButton
-                        Command="{Binding ShowProductCommand}"
-                        CornerRadius="20"
-                        FontFamily="{StaticResource Montserrat-SemiBold}"
-                        Style="{StaticResource SfButtonStyle}"
-                        StartColor="{DynamicResource HyperLink}"
-                        EndColor="{DynamicResource HyperLink}"
-                        Text="Show Product" />
-            </StackLayout>
-            <!-->===================================<-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>
