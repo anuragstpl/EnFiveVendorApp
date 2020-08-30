@@ -17,6 +17,12 @@ namespace EnFiveSales.DTO
         [JsonProperty("Name")]
         public string Name { get; set; }
 
+        [JsonProperty("OrderCandidateID")]
+        public string OrderCandidateID { get; set; }
+
+        [JsonProperty("OrderTime")]
+        public string OrderTime { get; set; }
+
         [JsonProperty("Price")]
         public string Price { get; set; }
 
@@ -26,8 +32,23 @@ namespace EnFiveSales.DTO
         [JsonProperty("Quantity")]
         public string Quantity { get; set; }
 
+        [JsonProperty("ReceiverStoreID")]
+        public long? ReceiverStoreID { get; set; }
+
         [JsonProperty("RecieptID")]
-        public long RecieptID { get; set; }
+        public long? RecieptID { get; set; }
+
+        [JsonProperty("RecieptOrderID")]
+        public long? RecieptOrderID { get; set; }
+
+        [JsonProperty("SenderStoreID")]
+        public long? SenderStoreID { get; set; }
+
+        [JsonProperty("StoreID")]
+        public long? StoreID { get; set; }
+
+        [JsonProperty("SubTotal")]
+        public string SubTotal { get; set; }
 
         [JsonProperty("UpdatedOn")]
         public string UpdatedOn { get; set; }
@@ -35,9 +56,13 @@ namespace EnFiveSales.DTO
         [JsonProperty("Status")]
         public string Status { get; set; }
 
-        [JsonProperty("StoreID")]
-        public long StoreID { get; set; }
-        
+        [JsonProperty("StoreName")]
+        public string StoreName { get; set; }
+
+        [JsonProperty("Username")]
+        public string Username { get; set; }
+
+
 
     }
 }

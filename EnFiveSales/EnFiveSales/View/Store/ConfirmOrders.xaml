@@ -38,7 +38,7 @@
                     <ListView x:Name="ListReceipt" 
                                                   SelectionMode="Single"
                                             HasUnevenRows="True"      
-                                                  ItemsSource="{Binding ListReceipt}">
+                                                  ItemsSource="{Binding ConfirmOrderProductsForStoreData}">
 
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -101,7 +101,7 @@
                                                Grid.Column="1"
                                                Margin="0,0,15,0"
                                                    Padding="5"
-                                               Text="{Binding CreatedOn}"
+                                               Text="{Binding OrderTime}"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"

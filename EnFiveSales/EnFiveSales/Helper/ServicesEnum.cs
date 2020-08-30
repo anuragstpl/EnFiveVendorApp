@@ -15,6 +15,8 @@
         UpdateRecieptStatus,
         AddOrderReciept,
         GetQuotedRecieptsForCustomer,
-        GetQuotedProductsForStore
+        GetQuotedProductsForStore,
+        GetConfirmedRecieptsForCustomer,
+        GetConfirmedProductsForStore
     }
 }

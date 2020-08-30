@@ -13,7 +13,7 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuotedVendors : ContentPage
     {
-        private readonly VendorListViewModel _collection = new VendorListViewModel();
+        private readonly GetQuotedRecieptsForCustomerViewModel  _collection = new GetQuotedRecieptsForCustomerViewModel();
         public QuotedVendors()
         {
             InitializeComponent();

@@ -67,11 +67,11 @@ namespace EnFiveSales.ViewModel
         {
             AddOrderRecieptRequest addOrderRecieptRequest = new AddOrderRecieptRequest();
             addOrderRecieptRequest.AuthToken =SessionHelper.AccessToken;
+            addOrderRecieptRequest.ListReceiverStoreIDs = new List<int>() {30,28,27};
             addOrderRecieptRequest.OrderTime = DateTime.Now.ToString();
             addOrderRecieptRequest.ReceiverStoreId = 30;
             addOrderRecieptRequest.RecieptId = 47;
             addOrderRecieptRequest.SenderStoreId = 29;
-           
             JsonValue addOrderRecieptResponse = await HttpRequestHelper<AddOrderRecieptRequest>.POSTreq(ServiceTypes.AddOrderReciept, addOrderRecieptRequest);
             AddOrderRecieptResponce addOrderRecieptResponce = JsonConvert.DeserializeObject<AddOrderRecieptResponce>(addOrderRecieptResponse.ToString());
             if (addOrderRecieptResponce.IsSuccess)

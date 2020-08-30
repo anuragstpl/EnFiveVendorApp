@@ -38,7 +38,7 @@
                 <ListView x:Name="productInfo" HasUnevenRows="True"
                                                   SelectionMode="Single"
                                                   VerticalOptions="FillAndExpand"
-                                                  ItemsSource="{Binding ProductInfo}">
+                                                  ItemsSource="{Binding QuotedProductsForStoreData}">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -99,7 +99,7 @@
                                                   
                                                Margin="15,0,15,0"
                                                    Padding="5"
-                                               Text="INR 250.00"
+                                               Text="{Binding Price}"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"

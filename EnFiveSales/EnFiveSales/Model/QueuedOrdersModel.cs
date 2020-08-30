@@ -11,8 +11,8 @@ namespace EnFiveSales.Model
         private string name { get; set; }
         private string status { get; set; }
         private string price { get; set; }
-        private long recieptID { get; set; }
-        private long storeID { get; set; }
+        private long? recieptID { get; set; }
+        private long? storeID { get; set; }
         public string Name
         {
             get { return this.name; }
@@ -69,7 +69,7 @@ namespace EnFiveSales.Model
                 this.NotifyPropertyChanged();
             }
         }
-        public long RecieptID
+        public long? RecieptID
         {
             get { return this.recieptID; }
             set
@@ -83,7 +83,7 @@ namespace EnFiveSales.Model
                 this.NotifyPropertyChanged();
             }
         }
-        public long StoreID
+        public long? StoreID
         {
             get { return this.storeID; }
             set

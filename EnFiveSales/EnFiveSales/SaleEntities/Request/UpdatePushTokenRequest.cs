@@ -9,6 +9,7 @@ namespace EnFiveSales.SaleEntities.Request
     {
         [JsonProperty("DevicePushToken")]
         public string DevicePushToken { get; set; }
+       
         [JsonProperty("DeviceType")]
         public string DeviceType { get; set; }
     }

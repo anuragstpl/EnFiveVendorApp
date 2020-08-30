@@ -19,5 +19,8 @@ namespace EnFiveSales.SaleEntities.Request
         [JsonProperty("SenderStoreID")]
         public long SenderStoreId { get; set; }
 
+        [JsonProperty("ListReceiverStoreIDs")] 
+        public List<int> ListReceiverStoreIDs { get; set; }
+
     }
 }

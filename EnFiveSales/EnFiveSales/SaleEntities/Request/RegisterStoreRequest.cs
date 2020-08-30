@@ -8,5 +8,6 @@ namespace EnFiveSales.SaleEntities.Request
     public class RegisterStoreRequest : BaseEntityRequest
     {
         public UserDTO UserInfo { get; set; }
+
     }
 }
