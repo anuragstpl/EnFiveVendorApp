@@ -36,7 +36,9 @@
             <StackLayout Grid.Row="1" Margin="20,8,20,0" >
                 <ScrollView VerticalOptions="FillAndExpand"
             Orientation="Vertical">
-                    <ListView x:Name="ListReceipt" 
+                    <ListView x:Name="ListReceipt" IsPullToRefreshEnabled="True"
+                              IsRefreshing="{Binding IsRefreshing}"
+                              RefreshCommand="{Binding RefreshCommand}"
                                                   SelectionMode="Single"
                                             HasUnevenRows="True"      
                                                   ItemsSource="{Binding ConfirmOrderProductsData}">

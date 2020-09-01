@@ -12,14 +12,43 @@ using System.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace EnFiveSales.ViewModel
 {
    public class QueuedOrdersViewModel : AddRecieptModel
     {
-        public ObservableCollection<QueuedOrdersModel> RecieptsData { get; set; }
+        public ObservableCollection<QueuedOrdersModel> recieptsData { get; set; }
+        public ObservableCollection<QueuedOrdersModel> RecieptsData {
+            get { return this.recieptsData; }
+            set
+            {
+                if (this.recieptsData == value)
+                {
+                    return;
+                }
+
+                this.recieptsData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
         public Command SelectedOrderCommand { get; set; }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsRefreshing = true;
+
+                     await GetReciepts();
+
+                    IsRefreshing = false;
+                });
+            }
+        }
 
         public QueuedOrdersViewModel()
         {

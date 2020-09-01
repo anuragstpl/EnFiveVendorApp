@@ -25,7 +25,22 @@ namespace EnFiveSales.ViewModel
     [DataContract]
     public class ReceiptViewModel : AddRecieptModel
     {
-        public ObservableCollection<AddRecieptModel> RecieptsData { get; set; }
+        public ObservableCollection<AddRecieptModel> recieptsData { get; set; }
+
+        public ObservableCollection<AddRecieptModel> RecieptsData
+        {
+            get { return this.recieptsData; }
+            set
+            {
+                if (this.recieptsData == value)
+                {
+                    return;
+                }
+
+                this.recieptsData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
 
         public ReceiptViewModel()
         {

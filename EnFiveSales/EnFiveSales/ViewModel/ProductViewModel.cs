@@ -139,7 +139,22 @@ namespace EnFiveSales.ViewModel
             }
         }
 
-        public ObservableCollection<ProductDTO> ProductData { get; set; }
+        public ObservableCollection<ProductDTO> productData { get; set; }
+
+        public ObservableCollection<ProductDTO> ProductData
+        {
+            get { return this.productData; }
+            set
+            {
+                if (this.productData == value)
+                {
+                    return;
+                }
+
+                this.productData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
 
         private async Task<AddProductResponce> GetProduct(int RecieptID)
         {

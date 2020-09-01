@@ -12,13 +12,45 @@ using System.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace EnFiveSales.ViewModel
 {
     class ConfirmOrdersStoreViewModal : ConfirmOrdersModel
     {
-        public ObservableCollection<ConfirmOrdersModel> ConfirmOrderProductsData { get; set; }
+        public ObservableCollection<ConfirmOrdersModel> confirmOrderProductsData { get; set; }
+
+        public ObservableCollection<ConfirmOrdersModel> ConfirmOrderProductsData
+        {
+            get { return this.confirmOrderProductsData; }
+            set
+            {
+                if (this.confirmOrderProductsData == value)
+                {
+                    return;
+                }
+
+                this.confirmOrderProductsData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsRefreshing = true;
+
+                    await ConfirmOrderRecieptForCustomer();
+
+                    IsRefreshing = false;
+                });
+            }
+        }
+
         public ConfirmOrdersStoreViewModal()
         {
             Task.Run(async () => { await ConfirmOrderRecieptForCustomer(); }).Wait();

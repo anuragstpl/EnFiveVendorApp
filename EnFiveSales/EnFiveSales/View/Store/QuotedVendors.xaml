@@ -36,7 +36,9 @@
                 <ListView x:Name="vendorInfo" HasUnevenRows="True"
                                                   SelectionMode="Single"
                                                   VerticalOptions="FillAndExpand"
-                         
+                                                  IsPullToRefreshEnabled="True"
+                                                  RefreshCommand="{Binding RefreshCommand}"
+                                                  IsRefreshing="{Binding IsRefreshing}"
                                                   ItemsSource="{Binding GetQuotedRecieptsForCustomerData}">
                     <ListView.Behaviors>
                         <behaviors:ItemTappedBehavior Command="{Binding SelectedQuoteCommand}" />

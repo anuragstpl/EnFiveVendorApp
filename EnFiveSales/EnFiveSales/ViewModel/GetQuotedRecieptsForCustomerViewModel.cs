@@ -12,15 +12,46 @@ using System.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace EnFiveSales.ViewModel
 {
     public class GetQuotedRecieptsForCustomerViewModel : GetQuotedRecieptsForCustomerModel
     {
-        public ObservableCollection<GetQuotedRecieptsForCustomerModel> GetQuotedRecieptsForCustomerData { get; set; }
+        public ObservableCollection<GetQuotedRecieptsForCustomerModel> getQuotedRecieptsForCustomerData { get; set; }
+
+        public ObservableCollection<GetQuotedRecieptsForCustomerModel> GetQuotedRecieptsForCustomerData
+        {
+            get { return this.getQuotedRecieptsForCustomerData; }
+            set
+            {
+                if (this.getQuotedRecieptsForCustomerData == value)
+                {
+                    return;
+                }
+
+                this.getQuotedRecieptsForCustomerData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
 
         public Command SelectedQuoteCommand { get; set; }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsRefreshing = true;
+
+                    await QuotedRecieptForCustomer();
+
+                    IsRefreshing = false;
+                });
+            }
+        }
 
         public GetQuotedRecieptsForCustomerViewModel()
         {
