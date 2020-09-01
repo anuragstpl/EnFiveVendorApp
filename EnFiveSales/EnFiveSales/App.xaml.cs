@@ -24,6 +24,7 @@ namespace EnFiveSales
             CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
             {
                 System.Diagnostics.Debug.WriteLine($"TOKEN : {p.Token}");
+                SessionHelper.DeviceToken = p.Token;
                 Task.Run(async () => { await SendPushToServer(p.Token); }).ConfigureAwait(false);
             };
 

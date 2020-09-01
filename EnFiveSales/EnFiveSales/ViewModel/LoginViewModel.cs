@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Json;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -72,6 +73,7 @@ namespace EnFiveSales.ViewModel
             if (loginStoreResponse.IsSuccess)
             {
                 SessionHelper.AccessToken = loginStoreResponse.Token;
+                await SendPushToServer(SessionHelper.DeviceToken);
                 ((App)App.Current).UpdateMainPage();
             }
             else
@@ -112,6 +114,21 @@ namespace EnFiveSales.ViewModel
         private void SocialLoggedIn(object obj)
         {
             // Do something
+        }
+
+        public async Task<UpdatePushTokenResponse> SendPushToServer(string token)
+        {
+            UpdatePushTokenResponse updateDeviceTokenResponse = new UpdatePushTokenResponse();
+            if (!String.IsNullOrEmpty(SessionHelper.AccessToken))
+            {
+                UpdatePushTokenRequest updateDeviceTokenRequest = new UpdatePushTokenRequest();
+                updateDeviceTokenRequest.DevicePushToken = token;
+                updateDeviceTokenRequest.DeviceType = Device.RuntimePlatform;
+                updateDeviceTokenRequest.AuthToken = SessionHelper.AccessToken;
+                System.Json.JsonValue updateUserResponse = await HttpRequestHelper<UpdatePushTokenRequest>.POSTreq(ServiceTypes.UpdatePushToken, updateDeviceTokenRequest);
+                updateDeviceTokenResponse = JsonConvert.DeserializeObject<UpdatePushTokenResponse>(updateUserResponse.ToString());
+            }
+            return updateDeviceTokenResponse;
         }
 
         #endregion

@@ -18,15 +18,40 @@ namespace EnFiveSales.ViewModel
     public class QueuedOrderProductsViewModal : QueuedOrderProductsModal
     {
         public Command SendQuoteCommand { get; set; }
+        public Command UpdateQuoteCommand { get; set; }
         public QueuedOrderProductsViewModal(int receiptID)
         {
+            RecieptID = receiptID;
             ListGetProduct = new List<QueuedOrderProductsModal>();
             ProductData = new ObservableCollection<QueuedOrderProductsModal>();
             SendQuoteCommand = new Command(this.SendQuoteClicked);
+            UpdateQuoteCommand = new Command(this.UpdateQuoteClicked);
             Task.Run(async () => { await GetProduct(receiptID); }).Wait();
         }
 
         private async void SendQuoteClicked()
+        {
+            RecieptDTO recieptDTO = new RecieptDTO();
+            recieptDTO.Status = "2";
+            recieptDTO.Price = "";
+            recieptDTO.StoreID = 0;
+            recieptDTO.RecieptID = RecieptID;
+            UpdateRecieptStatusRequest updateRecieptStatusRequest = new UpdateRecieptStatusRequest();
+            updateRecieptStatusRequest.AuthToken = SessionHelper.AccessToken;
+            updateRecieptStatusRequest.updatRrecieptDTO = recieptDTO;
+            JsonValue updateRecieptRequest = await HttpRequestHelper<UpdateRecieptStatusRequest>.POSTreq(ServiceTypes.UpdateRecieptStatus, updateRecieptStatusRequest);
+            UpdateRecieptStatusResponse updateRecieptStatusResponse = JsonConvert.DeserializeObject<UpdateRecieptStatusResponse>(updateRecieptRequest.ToString());
+            if (updateRecieptStatusResponse.IsSuccess)
+            {
+                await App.Current.MainPage.DisplayAlert("Success", updateRecieptStatusResponse.Message, "Ok");
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Error", updateRecieptStatusResponse.Message, "Ok");
+            }
+        }
+
+        private async void UpdateQuoteClicked()
         {
             UpdateProductAvailabilityRequest updateProductAvailabilityRequest = new UpdateProductAvailabilityRequest();
             updateProductAvailabilityRequest.ProductInfo = new List<ProductDTO>();

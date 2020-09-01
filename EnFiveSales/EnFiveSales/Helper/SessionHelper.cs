@@ -18,6 +18,12 @@ namespace EnFiveSales.Helper
             set => AppSettings.AddOrUpdateValue(nameof(AccessToken), value);
         }
 
+        public static string DeviceToken
+        {
+            get => AppSettings.GetValueOrDefault(nameof(DeviceToken), string.Empty);
+            set => AppSettings.AddOrUpdateValue(nameof(DeviceToken), value);
+        }
+
         public static string FullName
         {
             get => AppSettings.GetValueOrDefault(nameof(FullName), string.Empty);
