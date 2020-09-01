@@ -3,6 +3,7 @@ using EnFiveSales.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace EnFiveSales.Model
 {
@@ -26,8 +27,8 @@ namespace EnFiveSales.Model
         private long storeID { get; set; }
         private string updatedOn { get; set; }
         private string status { get; set; }
-       
-      
+
+        private double total { get; set; }
         private bool active { get; set; }
         private string address { get; set; }
         private string deviceId { get; set; }
@@ -46,6 +47,21 @@ namespace EnFiveSales.Model
                 }
 
                 this.addedOn = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public double Total
+        {
+            get { return this.total; }
+            set
+            {
+                if (this.total == value)
+                {
+                    return;
+                }
+
+                this.total = value;
                 this.NotifyPropertyChanged();
             }
         }
@@ -381,5 +397,7 @@ namespace EnFiveSales.Model
                 this.NotifyPropertyChanged();
             }
         }
+
+        public Command UpdateRecieptStatusCommand { get; set; }
     }
 }

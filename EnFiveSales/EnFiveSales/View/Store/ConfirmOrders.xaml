@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:behaviors="clr-namespace:EnFiveSales.Behaviors"  
              NavigationPage.HasNavigationBar="True"
              x:Class="EnFiveSales.View.Store.ConfirmOrders">
     <ContentPage.Resources>
@@ -38,8 +39,10 @@
                     <ListView x:Name="ListReceipt" 
                                                   SelectionMode="Single"
                                             HasUnevenRows="True"      
-                                                  ItemsSource="{Binding ConfirmOrderProductsForStoreData}">
-
+                                                  ItemsSource="{Binding ConfirmOrderProductsData}">
+                        <ListView.Behaviors>
+                            <behaviors:ItemTappedBehavior Command="{Binding SelectedRecieptCommand}" />
+                        </ListView.Behaviors>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -79,18 +82,25 @@
                                                 <Label Grid.Column="1" Grid.ColumnSpan="5" FontFamily="{StaticResource Montserrat-SemiBold}"
                                                Grid.Row="0"
                                                Margin="0,13,0,0"
-                                               Text="{Binding Name}"
+                                               Text="{Binding StoreName}"
                                                TextColor="{DynamicResource Gray-900}"
                                                FontSize="14"
-                                              
+                                                />
+
+                                                <Label Grid.Column="1"  FontFamily="{StaticResource Montserrat-SemiBold}"
+                                               Grid.Row="1"
+                                               Margin="0,13,0,0"
+                                               Text="{Binding Username}"
+                                               TextColor="{DynamicResource Gray-900}"
+                                               FontSize="14"
                                                 />
 
                                                 <!-- Time -->
                                                 <Label Grid.Row="1"
-                                               Grid.Column="1"
+                                               Grid.Column="2"
                                                Margin="0,0,0,0"
                                                    Padding="5"
-                                               Text="Confirmed"
+                                               Text="{Binding Status}"
                                                TextColor="{DynamicResource Gray-700}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
@@ -99,9 +109,9 @@
                                                 <!-- Document Size -->
                                                 <Label Grid.Row="2" Grid.ColumnSpan="5"
                                                Grid.Column="1"
-                                               Margin="0,0,15,0"
+                                               Margin="0,13,0,0"
                                                    Padding="5"
-                                               Text="{Binding OrderTime}"
+                                               Text="{Binding CreatedOn}"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
@@ -112,7 +122,7 @@
                                                         <Label 
                                                Margin="15,0,15,0"
                                                    Padding="5"
-                                               Text="Total Price : INR500"
+                                               Text="{Binding Price}"
                                                    HorizontalOptions="End"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"

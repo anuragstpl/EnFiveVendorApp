@@ -13,10 +13,10 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VendorList : ContentPage
     {
-        private readonly VendorListViewModel _collection = new VendorListViewModel();
-        public VendorList()
+        public VendorList(int receiptID)
         {
             InitializeComponent();
+            VendorListViewModel _collection = new VendorListViewModel(receiptID);
             this.BindingContext = _collection;
         }
     }

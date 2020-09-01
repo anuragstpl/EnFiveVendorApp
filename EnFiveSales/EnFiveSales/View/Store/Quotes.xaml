@@ -64,6 +64,7 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
 
                                             <Label  Grid.Column="0" Margin="17,8" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="3"
@@ -92,14 +93,33 @@
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
                                                 />
-                                            <Frame CornerRadius="15" Grid.Row="2" Margin="6,8,6,10" HasShadow="False" Padding="0" Grid.Column="1">
+                                            <Label Grid.Row="1"
+                                               Grid.Column="2"
+                                               Margin="0,0,0,0"
+                                                   Padding="5"
+                                               Text="x"
+                                               TextColor="{DynamicResource Gray-700}"
+                                               FontSize="14"
+                                               FontFamily="{StaticResource Montserrat-Medium}"
+                                                />
+                                            <Label Grid.Row="1"
+                                               Grid.Column="3"
+                                               Margin="0,0,0,0"
+                                                   Padding="5"
+                                               Text="{Binding Price}"
+                                               TextColor="{DynamicResource Gray-700}"
+                                               FontSize="14"
+                                               FontFamily="{StaticResource Montserrat-Medium}"
+                                                />
+                                            <Frame CornerRadius="15" Grid.Row="2" Margin="6,8,6,10" HasShadow="False" Padding="0" Grid.Column="3">
                                                 <StackLayout Spacing="0" BackgroundColor="{DynamicResource Gray-200}">
 
                                                     <Label 
-                                                  
+                                                  VerticalOptions="Center"
+                                                        HorizontalOptions="Center"
                                                Margin="15,0,15,0"
                                                    Padding="5"
-                                               Text="{Binding Price}"
+                                               Text="{Binding Total}"
                                                TextColor="{DynamicResource Secondary}"
                                                FontSize="14"
                                                FontFamily="{StaticResource Montserrat-Medium}"
@@ -126,7 +146,7 @@
                 </Editor>
 
                 <gradientButton:GradientButton
-                        Command="{Binding LoginCommand}"
+                        Command="{Binding UpdateRecieptStatusCommand}"
                         CornerRadius="20"
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         Style="{StaticResource SfButtonStyle}"

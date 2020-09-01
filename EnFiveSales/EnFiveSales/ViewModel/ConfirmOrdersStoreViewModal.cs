@@ -3,6 +3,7 @@ using EnFiveSales.Helper;
 using EnFiveSales.Model;
 using EnFiveSales.SaleEntities.Request;
 using EnFiveSales.SaleEntities.Response;
+using EnFiveSales.View.Store;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,85 +12,61 @@ using System.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace EnFiveSales.ViewModel
 {
-    class ConfirmOrdersStoreViewModal : ConfirmOrderProductForStoreModal
+    class ConfirmOrdersStoreViewModal : ConfirmOrdersModel
     {
-        public ObservableCollection<ConfirmOrderProductForStoreModal> ConfirmOrderProductsForStoreData { get; set; }
+        public ObservableCollection<ConfirmOrdersModel> ConfirmOrderProductsData { get; set; }
         public ConfirmOrdersStoreViewModal()
         {
-            Task.Run(async () => { await ConfirmOrderProductsListForCustomer(); }).Wait();
+            Task.Run(async () => { await ConfirmOrderRecieptForCustomer(); }).Wait();
+            this.SelectedRecieptCommand = new Command(this.SelectedRecieptClicked);
         }
-        private async Task<ConfirmOrderProductsForStoreResponce> ConfirmOrderProductsListForCustomer()
+
+        private async void SelectedRecieptClicked(object obj)
         {
-            GetConfiredProductForStoreRequest getConfiredProductForStoreRequest = new GetConfiredProductForStoreRequest();
-            getConfiredProductForStoreRequest.AuthToken = "130ebdc006aa4088b0ab3106c67eea52";   //SessionHelper.AccessToken;
-            getConfiredProductForStoreRequest.RecieptId = 45;
-            getConfiredProductForStoreRequest.StoreId = 29;
-            JsonValue GetConfirmOrderProductForStoreResponse = await HttpRequestHelper<GetConfiredProductForStoreRequest>.POSTreq(ServiceTypes.GetConfirmedProductsForStore, getConfiredProductForStoreRequest);
-            ConfirmOrderProductsForStoreResponce confirmOrderProductsForStoreResponce = JsonConvert.DeserializeObject<ConfirmOrderProductsForStoreResponce>(GetConfirmOrderProductForStoreResponse.ToString());
-            if (confirmOrderProductsForStoreResponce.IsSuccess)
+            ConfirmOrdersModel confirmOrdersModel = (ConfirmOrdersModel)obj;
+            var mdp = (Application.Current.MainPage as MasterDetailPage);
+            var navPage = mdp.Detail as NavigationPage;
+            if (navPage.Navigation.NavigationStack.Count == 0 ||
+                            navPage.Navigation.NavigationStack.Last().GetType() != typeof(ProductList))
             {
-                try
+                await navPage.PushAsync(new ConfirmOrderProducts((int)confirmOrdersModel.RecieptID,(int)confirmOrdersModel.StoreID), true);
+            }
+        }
+
+        private async Task<ConfirmOrderProductsResponse> ConfirmOrderRecieptForCustomer()
+        {
+            string AccessToken = SessionHelper.AccessToken;
+            JsonValue GetConfirmOrderProductResponse = await HttpRequestHelper<String>.GetRequest(ServiceTypes.GetConfirmedRecieptsForCustomer, AccessToken);
+            ConfirmOrderProductsResponse confirmOrderProductsResponse = JsonConvert.DeserializeObject<ConfirmOrderProductsResponse>(GetConfirmOrderProductResponse.ToString());
+            if (confirmOrderProductsResponse.IsSuccess)
+            {
+                List<ConfirmOrdersModel> lstGetReciepts = confirmOrderProductsResponse.LstReciepts.Select(dc => new ConfirmOrdersModel()
                 {
-                    //List<ConfirmOrderProductForStoreModal> lstGetReciepts = confirmOrderProductsForStoreResponce.LstProducts.Select(dc => new ConfirmOrderProductForStoreModal()
-                    //{
-                    //    AddedOn = dc.AddedOn,
-                    //    CreatedOn = dc.CreatedOn,
-                    //    IsAvailable = dc.IsAvailable,
-                    //    Name = dc.Name,
-                    //    OrderCandidateID = dc.OrderCandidateId,
-                    //    OrderTime = dc.OrderTime,
-                    //    Price = dc.Price,
-                    //    ProductID = dc.ProductID,
-                    //    Quantity = dc.Quantity,
-                    //    ReceiverStoreID = dc.ReceiverStoreId,
-                    //    RecieptID = dc.RecieptID,
-                    //    RecieptOrderID = dc.ReceiverStoreId,
-                    //    SenderStoreID = dc.SenderStoreId,
-                    //    StoreID = dc.StoreId,
-                    //    SubTotal = dc.SubTotal,
-                    //    UpdatedOn = dc.UpdatedOn
-                    //}).ToList();
+                    CreatedOn = dc.CreatedOn,
+                    Name = dc.Name,
+                    Price = "Total Price : INR " + dc.Price,
+                    RecieptID = dc.RecieptID,
+                    Status = Enum.GetName(typeof(ReceiptStatusEnum), Convert.ToInt32(dc.Status)),
+                    StoreID = dc.StoreID,
+                    StoreName = dc.StoreName,
+                    Username = dc.Username
+                }).ToList();
 
+                ConfirmOrderProductsData = new ObservableCollection<ConfirmOrdersModel>();
 
-                    ConfirmOrderProductsForStoreData = new ObservableCollection<ConfirmOrderProductForStoreModal>();
-
-                    foreach (ProductDTO getReciept in confirmOrderProductsForStoreResponce.LstProducts)
-                    {
-                        ConfirmOrderProductForStoreModal confirmOrderProductForStoreModal = new ConfirmOrderProductForStoreModal();
-
-                        confirmOrderProductForStoreModal.AddedOn = getReciept.AddedOn;
-                        confirmOrderProductForStoreModal.CreatedOn = getReciept.CreatedOn;
-                        confirmOrderProductForStoreModal.IsAvailable = getReciept.IsAvailable;
-                        confirmOrderProductForStoreModal.Name = getReciept.Name;
-                        confirmOrderProductForStoreModal.OrderCandidateID = getReciept.OrderCandidateId;
-                        confirmOrderProductForStoreModal.OrderTime = getReciept.OrderTime;
-                        confirmOrderProductForStoreModal.Price = getReciept.Price;
-                        confirmOrderProductForStoreModal.ProductID = getReciept.ProductID;
-                        confirmOrderProductForStoreModal.Quantity = getReciept.Quantity;
-                        confirmOrderProductForStoreModal.ReceiverStoreID = getReciept.ReceiverStoreId;
-                        confirmOrderProductForStoreModal.RecieptID = getReciept.RecieptID;
-                        confirmOrderProductForStoreModal.RecieptOrderID = getReciept.ReceiverStoreId;
-                        confirmOrderProductForStoreModal.SenderStoreID = getReciept.SenderStoreId;
-                        confirmOrderProductForStoreModal.StoreID = getReciept.StoreId;
-                        confirmOrderProductForStoreModal.SubTotal = getReciept.SubTotal;
-                        confirmOrderProductForStoreModal.UpdatedOn = getReciept.UpdatedOn;
-                        ConfirmOrderProductsForStoreData.Add(confirmOrderProductForStoreModal);
-                    }
-
-                }
-                catch (Exception ex)
+                foreach (ConfirmOrdersModel getReciept in lstGetReciepts)
                 {
-
+                    ConfirmOrderProductsData.Add(getReciept);
                 }
             }
             else
             {
             }
-            return confirmOrderProductsForStoreResponce;
+            return confirmOrderProductsResponse;
         }
-
     }
 }

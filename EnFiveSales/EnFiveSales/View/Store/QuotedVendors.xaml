@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
              mc:Ignorable="d"
+             xmlns:behaviors="clr-namespace:EnFiveSales.Behaviors"   
              NavigationPage.HasNavigationBar="True"
              x:Class="EnFiveSales.View.Store.QuotedVendors">
     <ContentPage.Resources>
@@ -37,6 +38,9 @@
                                                   VerticalOptions="FillAndExpand"
                          
                                                   ItemsSource="{Binding GetQuotedRecieptsForCustomerData}">
+                    <ListView.Behaviors>
+                        <behaviors:ItemTappedBehavior Command="{Binding SelectedQuoteCommand}" />
+                    </ListView.Behaviors>
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -112,21 +116,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
-            <StackLayout
-                    HorizontalOptions="FillAndExpand"
-                    Spacing="20"
-                  Margin="20,0,20,30"
-                Grid.Row="2"
-                    VerticalOptions="CenterAndExpand">
-                <gradientButton:GradientButton
-                        Command="{Binding UpdateRecieptStatusCommand}"
-                        CornerRadius="20"
-                        FontFamily="{StaticResource Montserrat-SemiBold}"
-                        Style="{StaticResource SfButtonStyle}"
-                        StartColor="{DynamicResource HyperLink}"
-                        EndColor="{DynamicResource HyperLink}"
-                        Text="Confirm Your Order(UpdateRecieptStatus)" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>

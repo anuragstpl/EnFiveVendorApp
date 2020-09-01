@@ -3,6 +3,7 @@ using EnFiveSales.Helper;
 using EnFiveSales.Model;
 using EnFiveSales.SaleEntities.Request;
 using EnFiveSales.SaleEntities.Response;
+using EnFiveSales.View.Store;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,17 +19,24 @@ namespace EnFiveSales.ViewModel
    public class QueuedOrdersViewModel : AddRecieptModel
     {
         public ObservableCollection<QueuedOrdersModel> RecieptsData { get; set; }
-        public Command ShowRecieptProductCommand { get;  set; }
+        public Command SelectedOrderCommand { get; set; }
 
         public QueuedOrdersViewModel()
         {
             Task.Run(async () => { await GetReciepts(); }).Wait();
-            this.ShowRecieptProductCommand = new Command(this.ShowRecieptProduct);
+            this.SelectedOrderCommand = new Command(this.SelectedOrderClicked);
         }
 
-        private async void ShowRecieptProduct(object obj)
+        private async void SelectedOrderClicked(object obj)
         {
-            
+            int recieptID = Convert.ToInt32(((QueuedOrdersModel)obj).RecieptID);
+            var mdp = (Application.Current.MainPage as MasterDetailPage);
+            var navPage = mdp.Detail as NavigationPage;
+            if (navPage.Navigation.NavigationStack.Count == 0 ||
+                            navPage.Navigation.NavigationStack.Last().GetType() != typeof(QueuedOrderProducts))
+            {
+                await navPage.PushAsync(new QueuedOrderProducts(recieptID), true);
+            }
         }
         private async Task<GetRecieptResponse> GetReciepts()
         {

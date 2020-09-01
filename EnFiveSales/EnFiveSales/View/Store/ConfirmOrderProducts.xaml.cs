@@ -13,10 +13,10 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConfirmOrderProducts : ContentPage
     {
-        private readonly ConfirmOrderProductsViewModal _collection = new ConfirmOrderProductsViewModal();
-        public ConfirmOrderProducts()
+        public ConfirmOrderProducts(int receiptID,int storeID)
         {
             InitializeComponent();
+            ConfirmOrderProductsViewModal _collection = new ConfirmOrderProductsViewModal(receiptID,  storeID);
             this.BindingContext = _collection;
         }
     }

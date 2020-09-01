@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EnFiveSales.Model
 {
-   public class ConfirmOrderProductForStoreModal : BaseViewModel
+   public class ConfirmOrderProductModel : BaseViewModel
     {
         private string addedOn { get; set; }
         public string AddedOn
@@ -229,6 +229,22 @@ namespace EnFiveSales.Model
                 }
 
                 this.subTotal = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        private double total { get; set; }
+        public double Total
+        {
+            get { return this.total; }
+            set
+            {
+                if (this.total == value)
+                {
+                    return;
+                }
+
+                this.total = value;
                 this.NotifyPropertyChanged();
             }
         }

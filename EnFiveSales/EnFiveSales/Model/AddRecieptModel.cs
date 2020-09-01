@@ -15,6 +15,7 @@ namespace EnFiveSales.Model
         private string price { get; set; }
         private long recieptID { get; set; }
         private long storeId { get; set; }
+
         public string AuthToken
         {
             get { return this.authToken; }
@@ -113,7 +114,7 @@ namespace EnFiveSales.Model
                 this.NotifyPropertyChanged();
             }
         }
-        public Command AddRecieptCommand { get; set; }
+
         public Command AddRecieptPopUpCommand { get; set; }
         public Command SelectedRecieptCommand { get; set; }
 

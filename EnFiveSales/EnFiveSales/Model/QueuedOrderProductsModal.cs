@@ -1,12 +1,38 @@
-﻿using EnFiveSales.ViewModel;
+﻿using EnFiveSales.DTO;
+using EnFiveSales.Helper;
+using EnFiveSales.SaleEntities.Request;
+using EnFiveSales.SaleEntities.Response;
+using EnFiveSales.View.Store;
+using EnFiveSales.ViewModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Json;
 using System.Text;
+using Xamarin.Forms;
 
 namespace EnFiveSales.Model
 {
    public class QueuedOrderProductsModal :BaseViewModel 
     {
+        
+
+        private long subTotal { get; set; }
+        public long SubTotal
+        {
+            get { return this.subTotal; }
+            set
+            {
+                if (this.subTotal == value)
+                {
+                    return;
+                }
+                this.subTotal = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
         private string addedOn { get; set; }
         public string AddedOn
         {
@@ -51,6 +77,37 @@ namespace EnFiveSales.Model
                 }
 
                 this.price = value;
+                this.NotifyPropertyChanged();
+                this.UpdatePricing(value);
+            }
+        }
+
+        public ObservableCollection<QueuedOrderProductsModal> productData { get; set; }
+        public ObservableCollection<QueuedOrderProductsModal> ProductData
+        {
+            get { return this.productData; }
+            set
+            {
+                if (this.productData == value)
+                {
+                    return;
+                }
+                this.productData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public List<QueuedOrderProductsModal> lstGetProduct { get; set; }
+        public List<QueuedOrderProductsModal> ListGetProduct
+        {
+            get { return this.lstGetProduct; }
+            set
+            {
+                if (this.lstGetProduct == value)
+                {
+                    return;
+                }
+                this.lstGetProduct = value;
                 this.NotifyPropertyChanged();
             }
         }
@@ -154,6 +211,29 @@ namespace EnFiveSales.Model
                 this.updatedOn = value;
                 this.NotifyPropertyChanged();
             }
+        }
+
+        private double total { get; set; }
+
+        public double Total
+        {
+            get { return this.total; }
+            set
+            {
+                if (this.total == value)
+                {
+                    return;
+                }
+
+                this.total = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public  void UpdatePricing(string price)
+        {
+            Total =  Convert.ToDouble(Quantity) * (String.IsNullOrEmpty(price) ? 0 : Convert.ToDouble(price));
+           
         }
     }
 }

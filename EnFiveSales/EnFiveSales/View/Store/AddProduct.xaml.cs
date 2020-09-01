@@ -14,9 +14,9 @@ namespace EnFiveSales.View.Store
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddProduct : PopupPage
     {
-        private readonly ProductViewModel _collection = new ProductViewModel();
-        public AddProduct()
+        public AddProduct(int receiptID)
         {
+            AddProductViewModel _collection = new AddProductViewModel(receiptID);
             InitializeComponent();
             this.BindingContext = _collection;
         }

@@ -17,6 +17,7 @@ namespace EnFiveSales.Model
         private string storeName { get; set; }
         private long storeUserId { get; set; }
         private string username { get; set; }
+        private string backgroundColor { get; set; }
         public Command SignUpCommand { get; set; }
         public Command LoginCommand { get; set; }
         public bool Active
@@ -30,6 +31,21 @@ namespace EnFiveSales.Model
                 }
 
                 this.active = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public string BackgroundColor
+        {
+            get { return this.backgroundColor; }
+            set
+            {
+                if (this.backgroundColor == value)
+                {
+                    return;
+                }
+
+                this.backgroundColor = value;
                 this.NotifyPropertyChanged();
             }
         }

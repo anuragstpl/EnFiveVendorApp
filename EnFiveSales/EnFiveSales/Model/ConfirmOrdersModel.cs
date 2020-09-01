@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace EnFiveSales.Model
 {
-   public  class ConfirmOrderProductsModal : BaseViewModel 
+   public  class ConfirmOrdersModel : BaseViewModel 
     {
         private string createdOn { get; set; }
         public string CreatedOn
@@ -130,6 +131,8 @@ namespace EnFiveSales.Model
                 this.NotifyPropertyChanged();
             }
         }
+
+        public Command SelectedRecieptCommand { get; set; }
 
     }
 }

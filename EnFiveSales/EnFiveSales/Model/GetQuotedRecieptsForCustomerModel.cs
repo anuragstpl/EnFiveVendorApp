@@ -132,6 +132,6 @@ namespace EnFiveSales.Model
             }
         }
 
-        public Command UpdateRecieptStatusCommand { get; set; }
+
     }
 }

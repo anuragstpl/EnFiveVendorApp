@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="True"
-              xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
+             xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
+             xmlns:behaviors="clr-namespace:EnFiveSales.Behaviors" 
              x:Class="EnFiveSales.View.Store.VendorList">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -36,8 +37,10 @@
                 <ListView x:Name="vendorInfo" HasUnevenRows="True"
                                                   SelectionMode="Single"
                                                   VerticalOptions="FillAndExpand"
-                          
                                                   ItemsSource="{Binding UserDetails}">
+                    <ListView.Behaviors>
+                        <behaviors:ItemTappedBehavior Command="{Binding SelectedVendorCommand}" />
+                    </ListView.Behaviors>
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -47,7 +50,7 @@
                                     <Frame  IsClippedToBounds="True"  
                                     HasShadow="True"  
                                     Padding="0"  
-                                    BackgroundColor="White">
+                                    BackgroundColor="{Binding BackgroundColor}">
                                         <Frame.Margin>
                                             <OnPlatform x:TypeArguments="Thickness"  
                                              Android="10"   

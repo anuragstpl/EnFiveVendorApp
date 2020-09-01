@@ -8,7 +8,7 @@ namespace EnFiveSales.SaleEntities.Response
 {
    public class AddRecieptResponse : BaseEntityResponse
     {
-        [JsonProperty("recieptDTO")]
+        [JsonProperty("Reciepts")]
         public List<RecieptDTO> LstReciept { get; set; }
     }
 }

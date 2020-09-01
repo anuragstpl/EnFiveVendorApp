@@ -23,7 +23,6 @@ namespace EnFiveSales.ViewModel
     [DataContract]
     public class ProductViewModel : BaseViewModel
     {
-
         private string price { get; set; }
         public string Price
         {
@@ -69,6 +68,23 @@ namespace EnFiveSales.ViewModel
                 }
 
                 this.recieptID = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        private int globalRecieptID { get; set; }
+
+        public int GlobalRecieptID
+        {
+            get { return this.globalRecieptID; }
+            set
+            {
+                if (this.globalRecieptID == value)
+                {
+                    return;
+                }
+
+                this.globalRecieptID = value;
                 this.NotifyPropertyChanged();
             }
         }
@@ -127,6 +143,7 @@ namespace EnFiveSales.ViewModel
 
         private async Task<AddProductResponce> GetProduct(int RecieptID)
         {
+            GlobalRecieptID = RecieptID;
             JsonValue GetProductResponce = await HttpRequestHelper<String>.GetRequest(ServiceTypes.GetProducts, SessionHelper.AccessToken + "/" + RecieptID.ToString());
             AddProductResponce getProductResponse = JsonConvert.DeserializeObject<AddProductResponce>(GetProductResponce.ToString());
             if (getProductResponse.IsSuccess)
@@ -157,8 +174,6 @@ namespace EnFiveSales.ViewModel
             return getProductResponse;
         }
 
-        public Command AddProductCommand { get; set; }
-
         public Command SendProductToVendorCommand { get; set; }
 
         public Command AddProductPopUpCommand { get; set; }
@@ -166,48 +181,29 @@ namespace EnFiveSales.ViewModel
         public ProductViewModel(int RecieptID)
         {
             Task.Run(async () => { await GetProduct(RecieptID); }).Wait();
-            this.AddProductCommand = new Command(this.AddProductClicked);
             this.AddProductPopUpCommand = new Command(this.AddProductPopUpClicked);
+            this.SendProductToVendorCommand = new Command(this.SendProductToVendorClicked);
         }
 
         public ProductViewModel()
         {
-            this.AddProductCommand = new Command(this.AddProductClicked);
             this.AddProductPopUpCommand = new Command(this.AddProductPopUpClicked);
-        }
-
-        private async void AddProductClicked(object obj)
-        {
-            ///GetProducts/{AuthToken}/{RecieptID} API need to be implemented
-            AddProductRequest addProductRequest = new AddProductRequest();
-            addProductRequest.AuthToken = SessionHelper.AccessToken;
-            ProductDTO productDTO = new ProductDTO();
-            productDTO.AddedOn = DateTime.Now.ToString();
-            productDTO.IsAvailable = true;
-            productDTO.Name = Name;
-            productDTO.Price = Price;
-            productDTO.ProductID = ProductID;
-            productDTO.RecieptID = 45;
-            productDTO.Quantity = Quantity;
-            productDTO.UpdatedOn = DateTime.Now.ToString();
-            addProductRequest.productDTO = productDTO;
-            JsonValue AddProductResponse = await HttpRequestHelper<AddProductRequest>.POSTreq(ServiceTypes.AddProduct, addProductRequest);
-            AddProductResponce addProductResponce = JsonConvert.DeserializeObject<AddProductResponce>(AddProductResponse.ToString());
-            if (addProductResponce.IsSuccess)
-            {
-                await App.Current.MainPage.DisplayAlert("success", addProductResponce.Message, "Ok");
-                Task.Run(async () => { await GetProduct(45); }).Wait();
-            }
-            else
-            {
-                await App.Current.MainPage.DisplayAlert("Error", addProductResponce.Message, "Ok");
-            }
-            PopupNavigation.PopAsync(true);
         }
 
         private void AddProductPopUpClicked(object obj)
         {
-            PopupNavigation.PushAsync(new AddProduct());
+            PopupNavigation.PushAsync(new AddProduct(Convert.ToInt32(GlobalRecieptID)));
+        }
+
+        private async void SendProductToVendorClicked(object obj)
+        {
+            var mdp = (Application.Current.MainPage as MasterDetailPage);
+            var navPage = mdp.Detail as NavigationPage;
+            if (navPage.Navigation.NavigationStack.Count == 0 ||
+                            navPage.Navigation.NavigationStack.Last().GetType() != typeof(VendorList))
+            {
+                await navPage.PushAsync(new VendorList(GlobalRecieptID), true);
+            }
         }
 
     }

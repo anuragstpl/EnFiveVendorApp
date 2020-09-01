@@ -66,26 +66,34 @@
 
                     <Label  Grid.Column="0" Margin="20,0" Grid.Row="4"
                                                TextColor="{DynamicResource Gray-600}"
-                                               Text="{StaticResource FileExplorer}"
+                                               Text="{StaticResource Document}"
                                                FontSize="20"
                                                FontFamily="{StaticResource FontIcons}" />
-                    <local:NavigationItem Text="Confirm Orders" Grid.Row="4" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="3" />
+                    <local:NavigationItem Text="Quotes" Grid.Row="4" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="6" />
                     <ContentView HeightRequest="1" Grid.Row="5" BackgroundColor="Gray" Grid.ColumnSpan="2" />
 
                     <Label  Grid.Column="0" Margin="20,0" Grid.Row="6"
                                                TextColor="{DynamicResource Gray-600}"
-                                               Text="{StaticResource Settings}"
+                                               Text="{StaticResource FileExplorer}"
                                                FontSize="20"
                                                FontFamily="{StaticResource FontIcons}" />
-                    <local:NavigationItem Text="Profile Management" Grid.Row="6" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="4" />
+                    <local:NavigationItem Text="Confirm Orders" Grid.Row="6" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="3" />
                     <ContentView HeightRequest="1" Grid.Row="7" BackgroundColor="Gray" Grid.ColumnSpan="2" />
 
                     <Label  Grid.Column="0" Margin="20,0" Grid.Row="8"
                                                TextColor="{DynamicResource Gray-600}"
+                                               Text="{StaticResource Settings}"
+                                               FontSize="20"
+                                               FontFamily="{StaticResource FontIcons}" />
+                    <local:NavigationItem Text="Profile Management" Grid.Row="8" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="4" />
+                    <ContentView HeightRequest="1" Grid.Row="9" BackgroundColor="Gray" Grid.ColumnSpan="2" />
+
+                    <Label  Grid.Column="0" Margin="20,0" Grid.Row="10"
+                                               TextColor="{DynamicResource Gray-600}"
                                                Text="{StaticResource Account}"
                                                FontSize="20"
                                                FontFamily="{StaticResource FontIcons}" />
-                    <local:NavigationItem Text="Log Out" Grid.Row="8" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="5" />
+                    <local:NavigationItem Text="Log Out" Grid.Row="10" Grid.Column="1"  Command="{Binding NavigationCommand}" CommandParameter="5" />
 
                 </Grid>
             </StackLayout>

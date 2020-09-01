@@ -56,6 +56,13 @@ namespace EnFiveSales.ViewModel
                                 navPage.PushAsync(new ProfileManagement(), true);
                             }
                             break;
+                        case "6":
+                            if (navPage.Navigation.NavigationStack.Count == 0 ||
+                               navPage.Navigation.NavigationStack.Last().GetType() != typeof(QuotedVendors))
+                            {
+                                navPage.PushAsync(new QuotedVendors(), true);
+                            }
+                            break;
                         case "5":
                             if (navPage.Navigation.NavigationStack.Count == 0 ||
                                navPage.Navigation.NavigationStack.Last().GetType() != typeof(Login))
