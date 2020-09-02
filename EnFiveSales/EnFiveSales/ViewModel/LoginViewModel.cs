@@ -29,6 +29,8 @@ namespace EnFiveSales.ViewModel
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
+            Username = new BaseViewModel();
+            Password = new BaseViewModel();
         }
 
         #endregion
@@ -65,22 +67,24 @@ namespace EnFiveSales.ViewModel
         /// <param name="obj">The Object</param>
         private async void LoginClicked(object obj)
         {
-            LoginStoreRequest loginStoreRequest = new LoginStoreRequest();
-            loginStoreRequest.Username = Username;
-            loginStoreRequest.Password = Password;
-            JsonValue userLoginResponse = await HttpRequestHelper<LoginStoreRequest>.POSTreq(ServiceTypes.Login, loginStoreRequest);
-            LoginStoreResponse loginStoreResponse = JsonConvert.DeserializeObject<LoginStoreResponse>(userLoginResponse.ToString());
-            if (loginStoreResponse.IsSuccess)
+            if (CheckValidation() == 0)
             {
-                SessionHelper.AccessToken = loginStoreResponse.Token;
-                await SendPushToServer(SessionHelper.DeviceToken);
-                ((App)App.Current).UpdateMainPage();
+                LoginStoreRequest loginStoreRequest = new LoginStoreRequest();
+                loginStoreRequest.Username = Username.Data;
+                loginStoreRequest.Password = Password.Data;
+                JsonValue userLoginResponse = await HttpRequestHelper<LoginStoreRequest>.POSTreq(ServiceTypes.Login, loginStoreRequest);
+                LoginStoreResponse loginStoreResponse = JsonConvert.DeserializeObject<LoginStoreResponse>(userLoginResponse.ToString());
+                if (loginStoreResponse.IsSuccess)
+                {
+                    SessionHelper.AccessToken = loginStoreResponse.Token;
+                    await SendPushToServer(SessionHelper.DeviceToken);
+                    ((App)App.Current).UpdateMainPage();
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", loginStoreResponse.Message, "Ok");
+                }
             }
-            else
-            {
-                await App.Current.MainPage.DisplayAlert("Error", loginStoreResponse.Message, "Ok");
-            }
-
         }
 
         /// <summary>
@@ -129,6 +133,28 @@ namespace EnFiveSales.ViewModel
                 updateDeviceTokenResponse = JsonConvert.DeserializeObject<UpdatePushTokenResponse>(updateUserResponse.ToString());
             }
             return updateDeviceTokenResponse;
+        }
+
+        public int CheckValidation()
+        {
+            int errorCounter = 0;
+            Password.NotValidMessageError = "Password is required";
+            Password.IsNotValid = string.IsNullOrEmpty(Password.Data);
+            Username.NotValidMessageError = "Username is required";
+            Username.IsNotValid = string.IsNullOrEmpty(Username.Data);
+
+            if (Password.IsNotValid)
+            {
+                errorCounter++;
+                BorderColor = "Red";
+            }
+
+            if (Username.IsNotValid)
+            {
+                errorCounter++;
+                BorderColor = "Red";
+            }
+            return errorCounter;
         }
 
         #endregion

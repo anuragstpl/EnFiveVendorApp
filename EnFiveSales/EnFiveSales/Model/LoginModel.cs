@@ -7,10 +7,10 @@ namespace EnFiveSales.Model
 {
     public class LoginModel : BaseViewModel
     {
-        private string passwordHash { get; set; }
-        private string userNameOREmail { get; set; }
+        private BaseViewModel passwordHash { get; set; }
+        private BaseViewModel userNameOREmail { get; set; }
 
-        public string Password
+        public BaseViewModel Password
         {
             get { return this.passwordHash; }
             set
@@ -25,7 +25,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public string Username
+        public BaseViewModel Username
         {
             get { return this.userNameOREmail; }
             set

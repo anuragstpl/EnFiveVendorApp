@@ -9,6 +9,7 @@ using Plugin.FirebasePushNotification;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,7 +20,10 @@ namespace EnFiveSales
         public App()
         {
             InitializeComponent();
-            MainPage = new Login();
+            MainThread.BeginInvokeOnMainThread(new Action(() =>
+            {
+                MainPage = GetMainPage();
+            }));
 
             CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
             {

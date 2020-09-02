@@ -34,7 +34,7 @@ namespace EnFiveSales.Droid.DependencyServices
         {
             // Instantiate the builder and set notification elements:
             NotificationCompat.Builder builder = new NotificationCompat.Builder(Application.Context, "my_notification_channel")
-                .SetContentTitle("Sample Notification")
+                .SetContentTitle("EnFiveSales Alert")
                 .SetContentText(message)
                 .SetSmallIcon(Android.Resource.Drawable.PresenceOnline);
 

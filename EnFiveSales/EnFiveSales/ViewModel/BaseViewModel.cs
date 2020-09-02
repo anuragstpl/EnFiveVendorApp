@@ -69,5 +69,108 @@ namespace EnFiveSales.ViewModel
             }
         }
 
+        #region ValidationEntities
+
+        private string data { get; set; }
+
+        private bool booleanData { get; set; }
+
+        public string Data
+        {
+            get
+            {
+                return this.data;
+            }
+
+            set
+            {
+                if (this.data == value)
+                {
+                    return;
+                }
+                this.data = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public bool BooleanData
+        {
+            get
+            {
+                return this.booleanData;
+            }
+
+            set
+            {
+                if (this.booleanData == value)
+                {
+                    return;
+                }
+                this.booleanData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        private bool isNotValid { get; set; }
+
+        public bool IsNotValid
+        {
+            get
+            {
+                return this.isNotValid;
+            }
+
+            set
+            {
+                if (this.isNotValid == value)
+                {
+                    return;
+                }
+                this.isNotValid = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        private string notValidMessageError { get; set; }
+
+        public string NotValidMessageError
+        {
+            get
+            {
+                return this.notValidMessageError;
+            }
+
+            set
+            {
+                if (this.notValidMessageError == value)
+                {
+                    return;
+                }
+                this.notValidMessageError = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        private string borderColor { get; set; }
+
+        public string BorderColor
+        {
+            get
+            {
+                return this.borderColor;
+            }
+
+            set
+            {
+                if (this.borderColor == value)
+                {
+                    return;
+                }
+                this.borderColor = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        #endregion
     }
 }

@@ -31,6 +31,7 @@ namespace EnFiveSales.ViewModel
 
         private async void SendQuoteClicked()
         {
+            UpdateQuoteClicked();
             RecieptDTO recieptDTO = new RecieptDTO();
             recieptDTO.Status = "2";
             recieptDTO.Price = "";
