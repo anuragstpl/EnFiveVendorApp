@@ -6,17 +6,17 @@ using Xamarin.Forms;
 
 namespace EnFiveSales.Model
 {
-    public class UserModel : BaseViewModel
+    public class AvailableVendorModel : BaseViewModel
     {
         private bool active { get; set; }
-        private BaseViewModel address { get; set; }
+        private string address { get; set; }
         private string deviceId { get; set; }
-        private BaseViewModel email { get; set; }
-        private BaseViewModel password { get; set; }
-        private BaseViewModel confirmPassword { get; set; }
-        private BaseViewModel storeName { get; set; }
+        private string email { get; set; }
+        private string password { get; set; }
+        private string confirmPassword { get; set; }
+        private string storeName { get; set; }
         private long storeUserId { get; set; }
-        private BaseViewModel username { get; set; }
+        private string username { get; set; }
         private string backgroundColor { get; set; }
         public Command SignUpCommand { get; set; }
         public Command LoginCommand { get; set; }
@@ -50,7 +50,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public BaseViewModel Address
+        public string Address
         {
             get { return this.address; }
             set
@@ -80,7 +80,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public BaseViewModel Email
+        public string Email
         {
             get { return this.email; }
             set
@@ -95,7 +95,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public BaseViewModel Password
+        public string Password
         {
             get { return this.password; }
             set
@@ -110,7 +110,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public BaseViewModel ConfirmPassword
+        public string ConfirmPassword
         {
             get { return this.confirmPassword; }
             set
@@ -125,7 +125,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public BaseViewModel StoreName
+        public string StoreName
         {
             get { return this.storeName; }
             set
@@ -155,7 +155,7 @@ namespace EnFiveSales.Model
             }
         }
 
-        public BaseViewModel Username
+        public string Username
         {
             get { return this.username; }
             set

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:behavior="clr-namespace:EnFiveSales.Behaviors"
              xmlns:roundedEntry="clr-namespace:EnFiveSales.Controls"
              xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
              xmlns:gradientBackground="clr-namespace:EnFiveSales.Controls"
@@ -67,54 +68,92 @@
                          x:Name="StoreNameEntry"
                             Placeholder="Store Name"
                             IsReadOnly ="False"
-                        
+                            BorderErrorColor="Red"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            BorderColor="{Binding BorderColor}"
+                            ErrorText="{Binding StoreName.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding StoreName.IsNotValid, Mode=TwoWay}"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding StoreName}"
+                            Text="{Binding StoreName.Data}"
                             TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
                         </roundedEntry:RoundedEntry>
 
                         <roundedEntry:RoundedEntry 
                          x:Name="UsernameEntry"
                             Placeholder="Username"
                             IsReadOnly ="False"
+                            BorderErrorColor="Red"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            BorderColor="{Binding BorderColor}"
+                            ErrorText="{Binding Username.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Username.IsNotValid, Mode=TwoWay}"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding Username}"
+                            Text="{Binding Username.Data}"
                             TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
                         </roundedEntry:RoundedEntry>
 
                         <roundedEntry:RoundedEntry 
                          x:Name="PasswordEntry"
                             Placeholder="Password"
+                            BorderErrorColor="Red"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            BorderColor="{Binding BorderColor}"
+                            ErrorText="{Binding Password.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Password.IsNotValid, Mode=TwoWay}"
                             IsPassword="True"
                             IsReadOnly ="False"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding Password}"
+                            Text="{Binding Password.Data}"
                             TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
                         </roundedEntry:RoundedEntry>
 
                         <roundedEntry:RoundedEntry 
                          x:Name="ConfirmPasswordEntry"
                             Placeholder="Confirm Password"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding ConfirmPassword.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding ConfirmPassword.IsNotValid, Mode=TwoWay}"
                             IsPassword="True"
                             IsReadOnly ="False"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding ConfirmPassword}"
+                            Text="{Binding ConfirmPassword.Data}"
                             TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
                         </roundedEntry:RoundedEntry>
 
                         <roundedEntry:RoundedEntry 
                          x:Name="EmailEntry"
                             Placeholder="Email"
-                        
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding Email.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Email.IsNotValid, Mode=TwoWay}"
                             IsReadOnly ="False"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding Email}"
+                            Text="{Binding Email.Data}"
                             TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
                         </roundedEntry:RoundedEntry>
 
                         <!--  Sign-up button  -->

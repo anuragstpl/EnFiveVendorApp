@@ -20,9 +20,9 @@ namespace EnFiveSales.ViewModel
 {
     [Preserve(AllMembers = true)]
     [DataContract]
-    public class VendorListViewModel : BaseViewModel
+    public class VendorListViewModel : AvailableVendorModel
     {
-        public ObservableCollection<UserModel> UserDetails { get; set; }
+        public ObservableCollection<AvailableVendorModel> UserDetails { get; set; }
         public Command SendRecieptCommand { get; set; }
         public Command SelectedVendorCommand { get; set; }
         private int globalRecieptID { get; set; }
@@ -80,7 +80,7 @@ namespace EnFiveSales.ViewModel
             StoreEntity AllstoreUserEntity = JsonConvert.DeserializeObject<StoreEntity>(GetAllStoreUser.ToString());
             if (AllstoreUserEntity.IsSuccess)
             {
-                List<UserModel> lstAllStore = AllstoreUserEntity.lstUserDetails.Select(dc => new UserModel()
+                List<AvailableVendorModel> lstAllStore = AllstoreUserEntity.lstUserDetails.Select(dc => new AvailableVendorModel()
                 {
                     StoreUserId = dc.StoreUserId,
                     StoreName = dc.StoreName,
@@ -92,9 +92,9 @@ namespace EnFiveSales.ViewModel
                     BackgroundColor = "White"
                 }).ToList();
 
-                UserDetails = new ObservableCollection<UserModel>();
+                UserDetails = new ObservableCollection<AvailableVendorModel>();
 
-                foreach (UserModel getProduct in lstAllStore)
+                foreach (AvailableVendorModel getProduct in lstAllStore)
                 {
                     UserDetails.Add(getProduct);
                 }
@@ -129,7 +129,7 @@ namespace EnFiveSales.ViewModel
 
         public void SelectedVendorClicked(object obj)
         {
-            UserModel userModel = (UserModel)obj;
+            AvailableVendorModel userModel = (AvailableVendorModel)obj;
             if (userModel.Active)
             {
                 userModel.Active = false;

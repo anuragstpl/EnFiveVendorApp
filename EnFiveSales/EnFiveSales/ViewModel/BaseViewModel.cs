@@ -75,6 +75,10 @@ namespace EnFiveSales.ViewModel
 
         private bool booleanData { get; set; }
 
+        private long longData { get; set; }
+
+        private int intData { get; set; }
+
         public string Data
         {
             get
@@ -107,6 +111,42 @@ namespace EnFiveSales.ViewModel
                     return;
                 }
                 this.booleanData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public long LongData
+        {
+            get
+            {
+                return this.longData;
+            }
+
+            set
+            {
+                if (this.longData == value)
+                {
+                    return;
+                }
+                this.longData = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public int IntData
+        {
+            get
+            {
+                return this.intData;
+            }
+
+            set
+            {
+                if (this.intData == value)
+                {
+                    return;
+                }
+                this.intData = value;
                 this.NotifyPropertyChanged();
             }
         }
