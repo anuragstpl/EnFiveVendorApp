@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace EnFiveSales.DTO
 {
@@ -28,5 +29,11 @@ namespace EnFiveSales.DTO
 
         [JsonProperty("Username")]
         public string Username { get; set; }
+
+        [JsonProperty("PhoneNo")]
+        public string PhoneNo { get; set; }
+
+        [JsonProperty("Categories")]
+        public List<CategoryDTO> Categories { get; set; }
     }
 }

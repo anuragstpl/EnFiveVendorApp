@@ -4,13 +4,232 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             NavigationPage.HasNavigationBar="True"
+             xmlns:behavior="clr-namespace:EnFiveSales.Behaviors"
+             xmlns:roundedEntry="clr-namespace:EnFiveSales.Controls"
+             xmlns:roundedEditor="clr-namespace:EnFiveSales.Controls"
+             xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
+             xmlns:gradientBackground="clr-namespace:EnFiveSales.Controls"
+             xmlns:converter="clr-namespace:EnFiveSales.Converter"
              x:Class="EnFiveSales.View.Store.ProfileManagement">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <gradientBackground:GradientColorStack StartColor="#cce2e3" EndColor="#6d9c95">
+            <ScrollView HorizontalOptions="FillAndExpand" >
+                <ScrollView.VerticalOptions>
+                    <OnIdiom
+                    x:TypeArguments="LayoutOptions"
+                    Default="FillAndExpand"
+                    Phone="FillAndExpand" />
+                </ScrollView.VerticalOptions>
+
+                <StackLayout
+                Spacing="0"
+                VerticalOptions="FillAndExpand"
+                Margin="0,32"
+                >
+                    <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="20"
+                    Margin="40,0"
+                    VerticalOptions="CenterAndExpand">
+
+                        <!--  Label to display the title of this page  -->
+                        <Label
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Sign Up"
+                        TextColor="{DynamicResource Gray-800}"
+                         />
+
+                        <!--  Label to display the description of this page  -->
+                        <Label
+                        x:Name="text"
+                        Margin="0,-8,0,8"
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Sales Purchase Simplified"
+                        TextColor="{DynamicResource Gray-700}" />
+
+                        <!--  Entry to get username from user  -->
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="StoreNameEntry"
+                            Placeholder="Store Name"
+                            IsReadOnly ="False"
+                            BorderErrorColor="Red"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            BorderColor="{Binding BorderColor}"
+                            ErrorText="{Binding StoreName.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding StoreName.IsNotValid, Mode=TwoWay}"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding StoreName.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="UsernameEntry"
+                            Placeholder="Username"
+                            IsReadOnly ="False"
+                            BorderErrorColor="Red"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            BorderColor="{Binding BorderColor}"
+                            ErrorText="{Binding Username.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Username.IsNotValid, Mode=TwoWay}"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Username.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="PasswordEntry"
+                            Placeholder="Password"
+                            BorderErrorColor="Red"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            BorderColor="{Binding BorderColor}"
+                            ErrorText="{Binding Password.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Password.IsNotValid, Mode=TwoWay}"
+                            IsPassword="True"
+                            IsReadOnly ="False"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Password.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="ConfirmPasswordEntry"
+                            Placeholder="Confirm Password"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding ConfirmPassword.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding ConfirmPassword.IsNotValid, Mode=TwoWay}"
+                            IsPassword="True"
+                            IsReadOnly ="False"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding ConfirmPassword.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="EmailEntry"
+                            Placeholder="Email"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding Email.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Email.IsNotValid, Mode=TwoWay}"
+                            IsReadOnly ="False"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Email.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="PhoneNoEntry"
+                            Placeholder="Phone No"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding PhoneNo.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding PhoneNo.IsNotValid, Mode=TwoWay}"
+                            IsReadOnly ="False"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding PhoneNo.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEditor:RoundedEditor 
+                         x:Name="AddressEntry"
+                            Placeholder="Address"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding Address.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Address.IsNotValid, Mode=TwoWay}"
+                            IsReadOnly ="False"
+                            AutoSize="TextChanges"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Address.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEditor:RoundedEditor.Behaviors>
+                                <behavior:EditorValidationBehaviour></behavior:EditorValidationBehaviour>
+                            </roundedEditor:RoundedEditor.Behaviors>
+                        </roundedEditor:RoundedEditor>
+
+                        <Grid>
+                            <roundedEditor:RoundedEditor  AutoSize="TextChanges" Placeholder="Select Categories" Text="{Binding SelectedCategories.Data}" FontFamily="{StaticResource Montserrat-Medium}" IsReadOnly="True" />
+                            <BoxView></BoxView>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OpenCategoriesCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+
+
+                        <!--  Sign-up button  -->
+                        <gradientButton:GradientButton
+                        Command="{Binding SignUpCommand}"
+                        CornerRadius="20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        Style="{StaticResource SfButtonStyle}"
+                        StartColor="{DynamicResource HyperLink}"
+                        EndColor="{DynamicResource HyperLink}"
+                        Text="Sign Up" />
+                    </StackLayout>
+
+                    <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    Spacing="1"
+                    VerticalOptions="End">
+
+                        <Button
+                        Command="{Binding LoginCommand}"
+                        BackgroundColor="Transparent"
+                        TextColor="{DynamicResource HyperLink}"
+                        Style="{StaticResource SfButtonStyle}"
+                        Text="Sign In" />
+
+                    </StackLayout>
+                </StackLayout>
+
+            </ScrollView>
+        </gradientBackground:GradientColorStack>
     </ContentPage.Content>
 </ContentPage>

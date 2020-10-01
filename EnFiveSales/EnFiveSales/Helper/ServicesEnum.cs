@@ -17,6 +17,9 @@
         GetQuotedRecieptsForCustomer,
         GetQuotedProductsForStore,
         GetConfirmedRecieptsForCustomer,
-        GetConfirmedProductsForStore
+        GetConfirmedProductsForStore,
+        GetAllCategories,
+        UpdateStore,
+        GetStoreProfile
     }
 }

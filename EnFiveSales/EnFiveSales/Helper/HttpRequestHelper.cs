@@ -30,6 +30,15 @@ namespace EnFiveSales.Helper
             return await Task.Run(() => JsonObject.Parse(response));
         }
 
+        public static async Task<JsonValue> ParameterLessGetRequest(ServiceTypes services)
+        {
+            Uri geturi = new Uri(SaleItemGlobal.serviceURL + services);
+            System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
+            System.Net.Http.HttpResponseMessage responseGet = await client.GetAsync(geturi);
+            string response = await responseGet.Content.ReadAsStringAsync();
+            return await Task.Run(() => JsonObject.Parse(response));
+        }
+
         internal static Task<JsonValue> GetRequest(ServiceTypes getReciepts, GetRecieptRequest getRecieptRequest)
         {
             throw new NotImplementedException();

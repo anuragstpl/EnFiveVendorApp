@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              xmlns:behavior="clr-namespace:EnFiveSales.Behaviors"
              xmlns:roundedEntry="clr-namespace:EnFiveSales.Controls"
+             xmlns:roundedEditor="clr-namespace:EnFiveSales.Controls"
              xmlns:gradientButton="clr-namespace:EnFiveSales.Controls"
              xmlns:gradientBackground="clr-namespace:EnFiveSales.Controls"
              xmlns:converter="clr-namespace:EnFiveSales.Converter"
@@ -155,6 +156,52 @@
                                 <behavior:ValidationBehavior></behavior:ValidationBehavior>
                             </roundedEntry:RoundedEntry.Behaviors>
                         </roundedEntry:RoundedEntry>
+
+                        <roundedEntry:RoundedEntry 
+                         x:Name="PhoneNoEntry"
+                            Placeholder="Phone No"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding PhoneNo.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding PhoneNo.IsNotValid, Mode=TwoWay}"
+                            IsReadOnly ="False"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding PhoneNo.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEntry:RoundedEntry.Behaviors>
+                                <behavior:ValidationBehavior></behavior:ValidationBehavior>
+                            </roundedEntry:RoundedEntry.Behaviors>
+                        </roundedEntry:RoundedEntry>
+
+                        <roundedEditor:RoundedEditor 
+                         x:Name="AddressEntry"
+                            Placeholder="Address"
+                            BorderErrorColor="Red"
+                            BorderColor="{Binding BorderColor}"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            ErrorText="{Binding Address.NotValidMessageError, Mode=TwoWay}"
+                            IsBorderErrorVisible="{Binding Address.IsNotValid, Mode=TwoWay}"
+                            IsReadOnly ="False"
+                            AutoSize="TextChanges"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Address.Data}"
+                            TextColor="{DynamicResource Gray-900}">
+                            <roundedEditor:RoundedEditor.Behaviors>
+                                <behavior:EditorValidationBehaviour></behavior:EditorValidationBehaviour>
+                            </roundedEditor:RoundedEditor.Behaviors>
+                        </roundedEditor:RoundedEditor>
+
+                        <Grid>
+                            <roundedEditor:RoundedEditor  AutoSize="TextChanges" Placeholder="Select Categories" Text="{Binding SelectedCategories.Data}" FontFamily="{StaticResource Montserrat-Medium}" IsReadOnly="True" />
+                            <BoxView></BoxView>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding OpenCategoriesCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+
 
                         <!--  Sign-up button  -->
                         <gradientButton:GradientButton

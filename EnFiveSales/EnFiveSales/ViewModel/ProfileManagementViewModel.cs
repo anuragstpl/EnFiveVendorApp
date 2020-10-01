@@ -1,32 +1,28 @@
-﻿using EnFiveSales.View;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
+﻿using EnFiveSales.DTO;
+using EnFiveSales.Helper;
 using EnFiveSales.Model;
 using EnFiveSales.SaleEntities.Request;
-using EnFiveSales.DTO;
-using System.Json;
-using EnFiveSales.Helper;
 using EnFiveSales.SaleEntities.Response;
+using EnFiveSales.View;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
+using System;
+using System.Collections.Generic;
+using System.Json;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using Rg.Plugins.Popup.Services;
-using System.Linq;
+using Xamarin.Forms;
 
 namespace EnFiveSales.ViewModel
 {
-    [Preserve(AllMembers = true)]
-    public class RegisterViewModel : UserModel
+    public class ProfileManagementViewModel : UserModel
     {
-        public RegisterViewModel()
+        public ProfileManagementViewModel()
         {
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.OpenCategoriesCommand = new Command(this.OpenCategoriesClicked);
-            this.LoginCommand = new Command(this.LoginClicked);
             Username = new BaseViewModel();
             Password = new BaseViewModel();
             Address = new BaseViewModel();
@@ -35,11 +31,37 @@ namespace EnFiveSales.ViewModel
             ConfirmPassword = new BaseViewModel();
             SelectedCategories = new BaseViewModel();
             PhoneNo = new BaseViewModel();
-            
+
             MessagingCenter.Subscribe<CategoryDTO>(this, "Update", (category) =>
             {
                 SelectedCategories.Data = String.Join(",", SaleItemGlobal.selectedCategories.Where(x => x.IsChecked == true).Select(x => x.Name).ToList());
             });
+
+            Task.Run(async () => { await GetProfileData(); }).Wait();
+
+        }
+
+        private async Task<GetStoreProfileResponse> GetProfileData()
+        {
+            JsonValue getStoreProfileResponse = await HttpRequestHelper<string>.GetRequest(ServiceTypes.GetStoreProfile, SessionHelper.AccessToken);
+            GetStoreProfileResponse getStoreResponse = JsonConvert.DeserializeObject<GetStoreProfileResponse>(getStoreProfileResponse.ToString());
+            if (getStoreResponse.IsSuccess)
+            {
+                Username.Data = getStoreResponse.userDetails.Username;
+                Password.Data = getStoreResponse.userDetails.Password;
+                Address.Data = getStoreResponse.userDetails.Address;
+                Email.Data = getStoreResponse.userDetails.Email;
+                StoreName.Data = getStoreResponse.userDetails.StoreName;
+                ConfirmPassword.Data = getStoreResponse.userDetails.Password;
+                PhoneNo.Data = getStoreResponse.userDetails.PhoneNo;
+                SaleItemGlobal.selectedCategories = getStoreResponse.userDetails.Categories;
+                SelectedCategories.Data = String.Join(",", SaleItemGlobal.selectedCategories.Where(x => x.IsChecked == true).Select(x => x.Name).ToList());
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Error", getStoreResponse.Message, "Ok");
+            }
+            return getStoreResponse;
         }
 
         private void OpenCategoriesClicked(object obj)
@@ -62,10 +84,10 @@ namespace EnFiveSales.ViewModel
                 userDTO.PhoneNo = PhoneNo.Data;
                 userDTO.Username = Username.Data;
                 RegisterStoreRequest registerStoreRequest = new RegisterStoreRequest();
-                registerStoreRequest.AuthToken = "";
+                registerStoreRequest.AuthToken = SessionHelper.AccessToken;
                 registerStoreRequest.UserInfo = userDTO;
                 registerStoreRequest.CategoryIDs = SaleItemGlobal.selectedCategories.Where(x => x.IsChecked == true).Select(x => x.CategoryId).ToList();
-                JsonValue userLoginResponse = await HttpRequestHelper<RegisterStoreRequest>.POSTreq(ServiceTypes.RegisterStore, registerStoreRequest);
+                JsonValue userLoginResponse = await HttpRequestHelper<RegisterStoreRequest>.POSTreq(ServiceTypes.UpdateStore, registerStoreRequest);
                 RegisterStoreResponse registerStoreResponse = JsonConvert.DeserializeObject<RegisterStoreResponse>(userLoginResponse.ToString());
                 if (registerStoreResponse.IsSuccess)
                 {
@@ -77,14 +99,6 @@ namespace EnFiveSales.ViewModel
                     await App.Current.MainPage.DisplayAlert("Error", registerStoreResponse.Message, "Ok");
                 }
             }
-        }
-
-        private void LoginClicked(object obj)
-        {
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                Application.Current.MainPage.Navigation.PushModalAsync(new Login());
-            });
         }
 
         public int CheckValidation()
@@ -153,6 +167,5 @@ namespace EnFiveSales.ViewModel
 
             return errorCounter;
         }
-
     }
 }

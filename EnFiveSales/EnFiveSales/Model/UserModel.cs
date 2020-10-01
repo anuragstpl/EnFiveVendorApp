@@ -1,6 +1,8 @@
-﻿using EnFiveSales.ViewModel;
+﻿using EnFiveSales.DTO;
+using EnFiveSales.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
@@ -15,11 +17,43 @@ namespace EnFiveSales.Model
         private BaseViewModel password { get; set; }
         private BaseViewModel confirmPassword { get; set; }
         private BaseViewModel storeName { get; set; }
+        private BaseViewModel phoneNo { get; set; }
+        private BaseViewModel selectedCategories { get; set; }
         private long storeUserId { get; set; }
         private BaseViewModel username { get; set; }
         private string backgroundColor { get; set; }
         public Command SignUpCommand { get; set; }
         public Command LoginCommand { get; set; }
+        public Command OpenCategoriesCommand { get; set; }
+        public ObservableCollection<CategoryDTO> listCategories { get; set; }
+        public BaseViewModel SelectedCategories
+        {
+            get { return this.selectedCategories; }
+            set
+            {
+                if (this.selectedCategories == value)
+                {
+                    return;
+                }
+
+                this.selectedCategories = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+        public ObservableCollection<CategoryDTO> ListCategories
+        {
+            get { return this.listCategories; }
+            set
+            {
+                if (this.listCategories == value)
+                {
+                    return;
+                }
+
+                this.listCategories = value;
+                this.NotifyPropertyChanged();
+            }
+        }
         public bool Active
         {
             get { return this.active; }
@@ -61,6 +95,21 @@ namespace EnFiveSales.Model
                 }
 
                 this.address = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        public BaseViewModel PhoneNo
+        {
+            get { return this.phoneNo; }
+            set
+            {
+                if (this.phoneNo == value)
+                {
+                    return;
+                }
+
+                this.phoneNo = value;
                 this.NotifyPropertyChanged();
             }
         }

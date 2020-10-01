@@ -9,5 +9,7 @@ namespace EnFiveSales.SaleEntities.Request
     {
         public UserDTO UserInfo { get; set; }
 
+        public List<long> CategoryIDs { get; set; }
+
     }
 }

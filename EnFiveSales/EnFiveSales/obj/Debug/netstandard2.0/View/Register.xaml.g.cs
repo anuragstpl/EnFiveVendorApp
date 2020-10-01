@@ -35,6 +35,12 @@ namespace EnFiveSales.View {
         private global::EnFiveSales.Controls.RoundedEntry EmailEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::EnFiveSales.Controls.RoundedEntry PhoneNoEntry;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::EnFiveSales.Controls.RoundedEditor AddressEntry;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Register));
             text = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "text");
@@ -43,6 +49,8 @@ namespace EnFiveSales.View {
             PasswordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::EnFiveSales.Controls.RoundedEntry>(this, "PasswordEntry");
             ConfirmPasswordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::EnFiveSales.Controls.RoundedEntry>(this, "ConfirmPasswordEntry");
             EmailEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::EnFiveSales.Controls.RoundedEntry>(this, "EmailEntry");
+            PhoneNoEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::EnFiveSales.Controls.RoundedEntry>(this, "PhoneNoEntry");
+            AddressEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::EnFiveSales.Controls.RoundedEditor>(this, "AddressEntry");
         }
     }
 }
